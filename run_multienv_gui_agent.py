@@ -40,6 +40,7 @@ def config() -> argparse.Namespace:
         "--provider_name", type=str, default="aws",
         help="Virtualization provider (vmware, docker, aws, azure, gcp, virtualbox)"
     )
+    parser.add_argument("--region", type=str, default="us-east-1", help="AWS region for VM")
     parser.add_argument(
         "--headless", action="store_true", help="Run in headless machine"
     )
