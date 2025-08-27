@@ -1,21 +1,38 @@
 import argparse
-from agent.agent import construct_agent
+from agent.agent import FunctionCallAgent
+from tools.gui_tools import ClickTool, TypeTool, ScrollTool, WaitTool, StopTool, PressKeyTool, PageGotoTool
+from tools.analysis_tools import MapSearchTool, ContentAnalyzerTool
+from tools.web_search_tools import WebSearchTool
 
 """Wrapper class for GUI-Agent for compatibility with OSWorld evaluation"""
 
+class PatchedFunctionCallAgent(FunctionCallAgent):
+    def _define_functions(self):
+        # Return tool instances, not strings
+        return [
+            ClickTool(),
+            TypeTool(),
+            ScrollTool(),
+            WaitTool(),
+            StopTool(),
+            PressKeyTool(),
+            MapSearchTool(),
+            ContentAnalyzerTool(),
+            PageGotoTool(),
+            # WebSearchTool(), # Uncomment if needed
+        ]
+
 class GUIAgentWrapper:
     def __init__(self, args: argparse.Namespace):
-        self.agent = construct_agent(args)
+        self.agent = PatchedFunctionCallAgent(args)
         self.trajectory = []
         self.meta_data = {}
         self.intent = ""
         self.args = args
 
     def predict(self, instruction, obs, **kwargs):
-        # Store intent and meta_data for this step
         self.intent = instruction
         self.meta_data = kwargs.get("meta_data", {})
-        # OSWorld expects a response and actions
         action = self.agent.next_action_custom(
             trajectory=self.trajectory,
             intent=self.intent,
@@ -23,10 +40,8 @@ class GUIAgentWrapper:
             model=self.args.model,
             args=self.args
         )
-        # For compatibility, wrap the action in a list and provide a dummy response
         response = str(action)
         actions = [action]
-        # Update trajectory (if needed by your agent)
         self.trajectory.append({"instruction": instruction, "observation": obs, "action": action})
         return response, actions
 
@@ -34,5 +49,4 @@ class GUIAgentWrapper:
         self.trajectory = []
         self.meta_data = {}
         self.intent = ""
-        # Call your agent's reset method
         self.agent.reset(task_config if task_config is not None else "")
