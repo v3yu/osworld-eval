@@ -8,18 +8,29 @@ from tools.web_search_tools import WebSearchTool
 
 class PatchedFunctionCallAgent(FunctionCallAgent):
     def _define_functions(self):
-        # Return tool instances, not strings
+        # Patch tool names for correct registration
+        click_tool = ClickTool(); click_tool.name = "click"
+        type_tool = TypeTool(); type_tool.name = "type"
+        scroll_tool = ScrollTool(); scroll_tool.name = "scroll"
+        wait_tool = WaitTool(); wait_tool.name = "wait"
+        stop_tool = StopTool(); stop_tool.name = "stop"
+        press_key_tool = PressKeyTool(); press_key_tool.name = "press_key"
+        map_search_tool = MapSearchTool(); map_search_tool.name = "map_search"
+        content_analyzer_tool = ContentAnalyzerTool(); content_analyzer_tool.name = "content_analyzer"
+        page_goto_tool = PageGotoTool(); page_goto_tool.name = "goto_url"
+        # web_search_tool = WebSearchTool(); web_search_tool.name = "web_search" # Uncomment if needed
+
         return [
-            ClickTool(),
-            TypeTool(),
-            ScrollTool(),
-            WaitTool(),
-            StopTool(),
-            PressKeyTool(),
-            MapSearchTool(),
-            ContentAnalyzerTool(),
-            PageGotoTool(),
-            # WebSearchTool(), # Uncomment if needed
+            click_tool,
+            type_tool,
+            scroll_tool,
+            wait_tool,
+            stop_tool,
+            press_key_tool,
+            map_search_tool,
+            content_analyzer_tool,
+            page_goto_tool,
+            # web_search_tool, # Uncomment if needed
         ]
 
 class GUIAgentWrapper:
