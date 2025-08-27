@@ -1,6 +1,3 @@
-"""
-Multi-environment runner for custom FunctionCallAgent in agent/agent.py
-"""
 import argparse
 import datetime
 import json
@@ -20,6 +17,7 @@ from config.argument_parser import config
 from utils.help_functions import prepare, set_global_variables, MMINA_DICT, get_unfinished
 from utils.logging_setup import setup_logging
 from agent.llm_config import load_grounding_model_vllm
+from mm_agents.gui_agent_wrapper import GUIAgentWrapper
 
 import sys
 sys.path.append('/lustre/scratch/users/guangyi.liu/agent/Memory_Web_Agent')
@@ -142,7 +140,7 @@ def run_env_tasks(task_queue, args, shared_scores):
             client_password=args.client_password
         )
         active_environments.append(env)
-        agent = construct_agent(args)
+        agent = GUIAgentWrapper(args)
         logger.info(f"Process {current_process().name} started.")
         while True:
             try:
