@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Hub - GUI Agent</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 1400px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .nav-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            padding: 12px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 0 1 auto;
+            min-width: 180px;
+            max-width: 200px;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item h3 {
+            margin: 0 0 5px 0;
+            color: white;
+            font-size: 1em;
+        }
+
+        .nav-item p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.8em;
+            line-height: 1.2;
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Navigation Hub</h1>
+        
+        <div class="nav-grid">
+            <div class="nav-item" onclick="window.open('https://www.wikipedia.org/', '_blank')">
+                <h3>Search Wikipedia</h3>
+                <p>Access Wikipedia for comprehensive information</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.youtube.com/', '_blank')">
+                <h3>Search on YouTube</h3>
+                <p>Find videos and content on YouTube</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.eventbrite.com/', '_blank')">
+                <h3>Search Some Events</h3>
+                <p>Discover events and activities</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://sg.trip.com/hotels/?locale=en-SG&curr=USD', '_blank')">
+                <h3>Book a Hotel</h3>
+                <p>Find and book accommodation</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://sg.trip.com/carhire/?channelid=14409&locale=en-SG&curr=USD', '_blank')">
+                <h3>Book a Car</h3>
+                <p>Rent a car for your journey</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.momondo.com/', '_blank')">
+                <h3>Book a Flight</h3>
+                <p>Search and book flights</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.nomadicmatt.com', '_blank')">
+                <h3>Travel Guide</h3>
+                <p>Get travel tips and guides</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.timeout.com/', '_blank')">
+                <h3>Find Food</h3>
+                <p>Discover restaurants and dining options</p>
+            </div>
+            <div class="nav-item" onclick="window.open('https://www.xe.com/', '_blank')">
+                <h3>Exchange Dollars</h3>
+                <p>Check currency exchange rates</p>
+            </div>
+            <div class="nav-item" onclick="window.open('http://18.220.200.63:7770/', '_blank')">
+                <h3>Shopping</h3>
+                <p>Browse One Stop Market for various products</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.01)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
