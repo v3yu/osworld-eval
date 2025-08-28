@@ -8,7 +8,7 @@ import os
 from typing import Dict, Any, List
 import sys
 sys.path.append('/lustre/scratch/users/guangyi.liu/agent/Qwen-Agent')
-from qwen_agent.tools import BaseTool
+from qwen_agent.tools.base import BaseTool
 from qwen_agent.tools.base import register_tool
 from .helpers import get_random_headers
 from playwright.async_api import async_playwright
