@@ -1,8 +1,7 @@
 from agent.agent import FunctionCallAgent
-from qwen_agent.tools import (
-    ClickTool, TypeTool, ScrollTool, WaitTool, StopTool, PressKeyTool, PageGotoTool,
-    MapSearchTool, ContentAnalyzerTool, WebSearchTool
-)
+from tools.gui_tools import ClickTool, TypeTool, ScrollTool, WaitTool, StopTool, PressKeyTool, PageGotoTool
+from tools.analysis_tools import MapSearchTool, ContentAnalyzerTool
+from tools.web_search_tools import WebSearchTool
 
 class PatchedFunctionCallAgent(FunctionCallAgent):
     def _define_functions(self):
