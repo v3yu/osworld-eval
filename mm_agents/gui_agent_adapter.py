@@ -1,8 +1,10 @@
 import argparse
+import base64
 import logging
 import os
+import re
 import sys
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple, Optional
 
 # Make GUI-Agent package importable despite hyphenated folder name
 _THIS_DIR = os.path.dirname(__file__)
@@ -24,8 +26,11 @@ class GUIAgentAdapter:
       where actions_list entries are strings or dicts accepted by DesktopEnv with action_space="pyautogui".
     """
 
-    def __init__(self, model: str = "gpt-4o-mini", max_tokens: int = 1500, openai_api_key: str | None = None,
-                 anthropic_api_key: str | None = None):
+    def __init__(self, model: str = "gpt-4o-mini", max_tokens: int = 1500, openai_api_key: Optional[str] = None,
+                 anthropic_api_key: Optional[str] = None,
+                 grounding_base_url: Optional[str] = None,
+                 grounding_model_name: str = "ByteDance-Seed/UI-TARS-1.5-7B",
+                 grounding_api_key: str = "dummy-key"):
         # Build a lightweight args namespace expected by FunctionCallAgent
         args = argparse.Namespace(
             model=model,
@@ -40,6 +45,17 @@ class GUIAgentAdapter:
         # Track short histories for prompting
         self._action_history: List[str] = []
         self._response_history: List[str] = []
+
+        # Optional grounding model client (OpenAI-compatible API, e.g., vLLM server)
+        self.grounding_client = None
+        self.grounding_model_name = grounding_model_name
+        if grounding_base_url:
+            try:
+                from openai import OpenAI  # Lazy import
+                self.grounding_client = OpenAI(base_url=grounding_base_url, api_key=grounding_api_key)
+                self.logger.info(f"Grounding enabled via {grounding_base_url}")
+            except Exception as e:
+                self.logger.warning(f"Failed to initialize grounding client: {e}")
 
     # --- OSWorld Agent API ---
     def reset(self, logger: logging.Logger | None = None):
@@ -130,11 +146,16 @@ class GUIAgentAdapter:
                 cmd = "pyautogui.scroll(-600)"
             return (f"scroll:{direction}", [cmd])
 
-        # CLICK -> not grounded; skip safely with WAIT for now
+        # CLICK -> use grounding model to get coordinates then click
         if _is(ActionTypes.CLICK):
             desc = action.get("description", "")
-            self.logger.info(f"Skipping CLICK without grounding: {desc}")
-            return (f"click(skipped):{desc}", ["WAIT"])  # noop placeholder
+            coords = self._ground_click(desc, obs)
+            if coords:
+                x, y = coords
+                cmd = f"pyautogui.click({int(x)}, {int(y)})"
+                return (f"click:{desc}@({int(x)},{int(y)})", [cmd])
+            self.logger.info(f"Grounding failed for CLICK: {desc}")
+            return (f"click(failed):{desc}", ["WAIT"])  # fallback
 
         # Fallback
         return ("none", ["WAIT"])  # be conservative
@@ -143,3 +164,254 @@ class GUIAgentAdapter:
 def _escape(text: str) -> str:
     """Escape quotes/backslashes for safe inclusion in pyautogui string literals."""
     return text.replace("\\", r"\\").replace('"', r'\"')
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+def _parse_coords_from_text(response_text: str) -> Optional[Tuple[float, float]]:
+    """Parse two coordinates from grounding model response text."""
+    if not response_text:
+        return None
+    # Strip everything except numbers, dot, comma, minus, whitespace
+    nums = re.findall(r"-?\d+\.?\d*", response_text)
+    if len(nums) >= 2:
+        try:
+            return float(nums[0]), float(nums[1])
+        except Exception:
+            return None
+    return None
+
+
+def _image_bytes_to_b64(png_bytes: bytes) -> str:
+    return base64.b64encode(png_bytes).decode("utf-8")
+
+
+class GUIAgentAdapter(GUIAgentAdapter):
+    def _ground_click(self, description: str, obs: Dict[str, Any]) -> Optional[Tuple[float, float]]:
+        """Use grounding model to convert a description to (x,y) coordinates."""
+        if not self.grounding_client:
+            return None
+        try:
+            screenshot_bytes = obs.get("screenshot")
+            if not isinstance(screenshot_bytes, (bytes, bytearray)):
+                return None
+            b64 = _image_bytes_to_b64(screenshot_bytes)
+            system_msg = "You are a grounding model, given the screenshot and the target element description, you need to identify the coordinates of the given element and return them in the format of click(point='<point>x1 y1</point>')."
+            user_items = [
+                {"type": "text", "text": f"Target element description: {description}\nWhat's the coordinates of the target element in the screenshot? You should return as click(point='<point>x1 y1</point>')"},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
+            ]
+            resp = self.grounding_client.chat.completions.create(
+                model=self.grounding_model_name,
+                messages=[
+                    {"role": "system", "content": system_msg},
+                    {"role": "user", "content": user_items},
+                ],
+                temperature=0.1,
+                max_tokens=256,
+            )
+            text = resp.choices[0].message.content if resp and resp.choices else ""
+            coords = _parse_coords_from_text(text)
+            return coords
+        except Exception as e:
+            self.logger.warning(f"Grounding click failed: {e}")
+            return None

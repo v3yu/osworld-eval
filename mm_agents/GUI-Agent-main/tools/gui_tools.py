@@ -1,37 +1,10 @@
-"""Custom GUI tools for the Qwen-Agent framework
-
-This module originally depends on qwen_agent for BaseTool and register_tool.
-To make OSWorld integration self-contained, we provide graceful fallbacks when
-qwen_agent is not installed or the hardcoded path is unavailable.
-"""
+"""Custom GUI tools for the Qwen-Agent framework"""
 from typing import Dict, Any
 import sys 
 import json
-
-# Try to import qwen_agent; if unavailable, define light-weight shims
-try:
-    sys.path.insert(0,'/lustre/scratch/users/guangyi.liu/agent/Qwen-Agent')
-    from qwen_agent.tools import BaseTool
-    from qwen_agent.tools.base import register_tool
-except Exception:  # pragma: no cover - fallback for environments without qwen_agent
-    class BaseTool:  # Minimal interface to satisfy downstream usage
-        name: str = ""
-        description: str = ""
-        parameters: Dict[str, Any] | None = None
-        def __init__(self, config: Dict[str, Any] | None = None):
-            self.config = config or {}
-        def call(self, args: str, **kwargs) -> str:
-            return ""
-
-    def register_tool(name: str):
-        def decorator(cls):
-            # No-op in fallback; simply attach name attribute if missing
-            try:
-                setattr(cls, 'name', name)
-            except Exception:
-                pass
-            return cls
-        return decorator
+sys.path.insert(0,'/lustre/scratch/users/guangyi.liu/agent/Qwen-Agent')
+from qwen_agent.tools import BaseTool
+from qwen_agent.tools.base import register_tool
 
 
 @register_tool('click')

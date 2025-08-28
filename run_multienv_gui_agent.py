@@ -36,6 +36,10 @@ def config() -> argparse.Namespace:
     parser.add_argument("--max_tokens", type=int, default=1500)
     parser.add_argument("--openai_api_key", type=str, default=os.getenv("OPENAI_API_KEY", ""))
     parser.add_argument("--anthropic_api_key", type=str, default=os.getenv("ANTHROPIC_API_KEY", ""))
+    # grounding config (OpenAI-compatible endpoint, e.g., vLLM server)
+    parser.add_argument("--grounding_base_url", type=str, default=os.getenv("GROUNDING_BASE_URL", ""))
+    parser.add_argument("--grounding_model_name", type=str, default=os.getenv("GROUNDING_MODEL_NAME", "ByteDance-Seed/UI-TARS-1.5-7B"))
+    parser.add_argument("--grounding_api_key", type=str, default=os.getenv("GROUNDING_API_KEY", "dummy-key"))
 
     # dataset config
     parser.add_argument("--test_config_base_dir", type=str, default="evaluation_examples")
@@ -104,7 +108,15 @@ def run_env_tasks(task_queue, args: argparse.Namespace, shared_scores):
             enable_proxy=True,
             client_password=args.client_password,
         )
-        agent = GUIAgentAdapter(model=args.model, max_tokens=args.max_tokens, openai_api_key=args.openai_api_key or None, anthropic_api_key=args.anthropic_api_key or None)
+        agent = GUIAgentAdapter(
+            model=args.model,
+            max_tokens=args.max_tokens,
+            openai_api_key=args.openai_api_key or None,
+            anthropic_api_key=args.anthropic_api_key or None,
+            grounding_base_url=(args.grounding_base_url or None),
+            grounding_model_name=args.grounding_model_name,
+            grounding_api_key=args.grounding_api_key,
+        )
 
         while True:
             try:
