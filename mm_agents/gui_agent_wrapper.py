@@ -41,6 +41,10 @@ class GUIAgentWrapper:
         self.intent = ""
         self.args = args
 
+        # Patch function_map directly to ensure registration
+        tool_list = self.agent._define_functions()
+        self.agent.function_map = {tool.name: tool for tool in tool_list}
+
     def predict(self, instruction, obs, **kwargs):
         self.intent = instruction
         self.meta_data = kwargs.get("meta_data", {})
