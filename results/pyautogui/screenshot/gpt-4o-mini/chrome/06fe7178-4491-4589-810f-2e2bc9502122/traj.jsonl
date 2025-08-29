@@ -1,0 +1,2 @@
+{"step_num": 1, "action_timestamp": "20250828@162326", "action": "pyautogui.press(\"enter\")", "response": "press:enter", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@162326.png"}
+{"Error": "chrome/06fe7178-4491-4589-810f-2e2bc9502122 - a bytes-like object is required, not 'NoneType'"}

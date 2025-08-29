@@ -1,0 +1,15 @@
+{"step_num": 1, "action_timestamp": "20250829@025841", "action": "WAIT", "response": "click(failed):slide 5", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250829@025841.png"}
+{"step_num": 2, "action_timestamp": "20250829@025853", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250829@025853.png"}
+{"step_num": 3, "action_timestamp": "20250829@025856", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250829@025856.png"}
+{"step_num": 4, "action_timestamp": "20250829@025859", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250829@025859.png"}
+{"step_num": 5, "action_timestamp": "20250829@025903", "action": "WAIT", "response": "click(failed):slide 5", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250829@025903.png"}
+{"step_num": 6, "action_timestamp": "20250829@025904", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250829@025904.png"}
+{"step_num": 7, "action_timestamp": "20250829@025908", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250829@025908.png"}
+{"step_num": 8, "action_timestamp": "20250829@025911", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250829@025911.png"}
+{"step_num": 9, "action_timestamp": "20250829@025914", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250829@025914.png"}
+{"step_num": 10, "action_timestamp": "20250829@025917", "action": "WAIT", "response": "click(failed):slide 5", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250829@025917.png"}
+{"step_num": 11, "action_timestamp": "20250829@025918", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250829@025918.png"}
+{"step_num": 12, "action_timestamp": "20250829@025921", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250829@025921.png"}
+{"step_num": 13, "action_timestamp": "20250829@025924", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250829@025924.png"}
+{"step_num": 14, "action_timestamp": "20250829@025928", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250829@025928.png"}
+{"step_num": 15, "action_timestamp": "20250829@025930", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250829@025930.png"}

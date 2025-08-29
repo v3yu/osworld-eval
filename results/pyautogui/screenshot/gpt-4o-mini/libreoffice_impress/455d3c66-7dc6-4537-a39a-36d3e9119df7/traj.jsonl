@@ -1,0 +1,15 @@
+{"step_num": 1, "action_timestamp": "20250829@005333", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250829@005333.png"}
+{"step_num": 2, "action_timestamp": "20250829@005335", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250829@005335.png"}
+{"step_num": 3, "action_timestamp": "20250829@005351", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250829@005351.png"}
+{"step_num": 4, "action_timestamp": "20250829@005353", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250829@005353.png"}
+{"step_num": 5, "action_timestamp": "20250829@005354", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250829@005354.png"}
+{"step_num": 6, "action_timestamp": "20250829@005356", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250829@005356.png"}
+{"step_num": 7, "action_timestamp": "20250829@005358", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250829@005358.png"}
+{"step_num": 8, "action_timestamp": "20250829@005359", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250829@005359.png"}
+{"step_num": 9, "action_timestamp": "20250829@005403", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250829@005403.png"}
+{"step_num": 10, "action_timestamp": "20250829@005405", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250829@005405.png"}
+{"step_num": 11, "action_timestamp": "20250829@005407", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250829@005407.png"}
+{"step_num": 12, "action_timestamp": "20250829@005409", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250829@005409.png"}
+{"step_num": 13, "action_timestamp": "20250829@005411", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250829@005411.png"}
+{"step_num": 14, "action_timestamp": "20250829@005413", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250829@005413.png"}
+{"step_num": 15, "action_timestamp": "20250829@005415", "action": "WAIT", "response": "click(failed):File menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250829@005415.png"}

@@ -1,0 +1,2 @@
+{"step_num": 1, "action_timestamp": "20250828@212422", "action": "pyautogui.typewrite(\"multiply total hours by hourly rate in Excel\"); pyautogui.press(\"enter\")", "response": "type:multiply total hours by hourly rate in Excel", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@212422.png"}
+{"Error": "libreoffice_calc/357ef137-7eeb-4c80-a3bb-0951f26a8aff - a bytes-like object is required, not 'NoneType'"}

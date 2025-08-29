@@ -1,0 +1,2 @@
+{"step_num": 1, "action_timestamp": "20250828@200438", "action": "WAIT", "response": "click(failed):button to add a new layer", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@200438.png"}
+{"Error": "gimp/b148e375-fe0b-4bec-90e7-38632b0d73c2 - a bytes-like object is required, not 'NoneType'"}
