@@ -1,0 +1,2 @@
+{"step_num": 1, "action_timestamp": "20250828@211202", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); pyautogui.typewrite(\"gimp\"); pyautogui.press(\"enter\")", "response": "goto_url:gimp", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@211202.png"}
+{"Error": "gimp/2e6f678f-472d-4c55-99cc-8e7c5c402a71 - a bytes-like object is required, not 'NoneType'"}

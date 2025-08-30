@@ -1,0 +1,2 @@
+{"step_num": 1, "action_timestamp": "20250828@231825", "action": "WAIT", "response": "click(failed):View menu or Freeze Panes option", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@231825.png"}
+{"Error": "libreoffice_calc/4188d3a4-077d-46b7-9c86-23e1a036f6c1 - a bytes-like object is required, not 'NoneType'"}
