@@ -46,7 +46,7 @@ class GUIAgentAdapter:
         self._action_history: List[str] = []
         self._response_history: List[str] = []
 
-        # Optional grounding model client (OpenAI-compatible API, e.g., vLLM server)
+        # grounding model client (OpenAI-compatible API, e.g., vLLM server)
         self.grounding_client = None
         self.grounding_model_name = grounding_model_name
         if grounding_base_url:

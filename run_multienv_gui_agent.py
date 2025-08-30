@@ -91,21 +91,27 @@ def distribute_tasks(test_all_meta: dict) -> List[Tuple[str, str]]:
 def run_env_tasks(task_queue, args: argparse.Namespace, shared_scores):
     env = None
     try:
-        from desktop_env.providers.aws.manager import IMAGE_ID_MAP
-        REGION = args.region
+        REGION = args.region if args.provider_name == "aws" else None
         screen_size = (args.screen_width, args.screen_height)
-        ami_id = IMAGE_ID_MAP[REGION].get(screen_size, IMAGE_ID_MAP[REGION][(1920, 1080)])
+        snapshot_name = None
+        if args.provider_name == "aws":
+            try:
+                from desktop_env.providers.aws.manager import IMAGE_ID_MAP
+                ami_id = IMAGE_ID_MAP[REGION].get(screen_size, IMAGE_ID_MAP[REGION][(1920, 1080)])
+                snapshot_name = ami_id
+            except Exception as e:
+                logging.getLogger("desktopenv.experiment").warning(f"Failed to resolve AWS AMI ID, proceeding without snapshot: {e}")
         env = DesktopEnv(
             path_to_vm=args.path_to_vm,
             action_space=args.action_space,
             provider_name=args.provider_name,
             region=REGION,
-            snapshot_name=ami_id,
+            snapshot_name=snapshot_name,
             screen_size=screen_size,
             headless=args.headless,
             os_type="Ubuntu",
             require_a11y_tree=args.observation_type in ["a11y_tree", "screenshot_a11y_tree", "som"],
-            enable_proxy=True,
+            enable_proxy=False,
             client_password=args.client_password,
         )
         agent = GUIAgentAdapter(
