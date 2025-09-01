@@ -1,9 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250828@192959", "action": "pyautogui.typewrite(\"Civil Division forms\"); pyautogui.press(\"enter\")", "response": "type:Civil Division forms", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@192959.png"}
-{"step_num": 2, "action_timestamp": "20250828@193003", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250828@193003.png"}
-{"step_num": 3, "action_timestamp": "20250828@193008", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250828@193008.png"}
-{"step_num": 4, "action_timestamp": "20250828@193013", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250828@193013.png"}
-{"step_num": 5, "action_timestamp": "20250828@193017", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250828@193017.png"}
-{"step_num": 6, "action_timestamp": "20250828@193021", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250828@193021.png"}
-{"step_num": 7, "action_timestamp": "20250828@193025", "action": "pyautogui.typewrite(\"Civil Division forms\"); pyautogui.press(\"enter\")", "response": "type:Civil Division forms", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250828@193025.png"}
-{"step_num": 8, "action_timestamp": "20250828@193030", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250828@193030.png"}
-{"Error": "chrome/9f935cce-0a9f-435f-8007-817732bfc0a5 - a bytes-like object is required, not 'NoneType'"}

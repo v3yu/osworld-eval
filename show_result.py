@@ -1,4 +1,6 @@
 import os
+import argparse
+import json
 
 
 def get_result(action_space, use_model, observation_type, result_dir):
@@ -41,23 +43,26 @@ def get_result(action_space, use_model, observation_type, result_dir):
                             all_result.append(0.0)
 
     for domain in domain_result:
-        print("Domain:", domain, "Runned:", len(domain_result[domain]), "Success Rate:",
-              sum(domain_result[domain]) / len(domain_result[domain]) * 100, "%")
+        if len(domain_result[domain]) > 0:
+            print("Domain:", domain, "Runned:", len(domain_result[domain]), "Success Rate:",
+                  sum(domain_result[domain]) / len(domain_result[domain]) * 100, "%")
 
-    print(">>>>>>>>>>>>>")
-    print("Office", "Success Rate:", sum(
-        domain_result["libreoffice_calc"] + domain_result["libreoffice_impress"] + domain_result[
-            "libreoffice_writer"]) / len(
-        domain_result["libreoffice_calc"] + domain_result["libreoffice_impress"] + domain_result[
-            "libreoffice_writer"]) * 100, "%")
-    print("Daily", "Success Rate:",
-          sum(domain_result["vlc"] + domain_result["thunderbird"] + domain_result["chrome"]) / len(
-              domain_result["vlc"] + domain_result["thunderbird"] + domain_result["chrome"]) * 100, "%")
-    print("Professional", "Success Rate:", sum(domain_result["gimp"] + domain_result["vs_code"]) / len(
-        domain_result["gimp"] + domain_result["vs_code"]) * 100, "%")
+    # Optional legacy grouped summaries (print only if domains exist)
+    print(">>>>>>>>>>>>")
+    groups = {
+        "Office": ["libreoffice_calc", "libreoffice_impress", "libreoffice_writer"],
+        "Daily": ["vlc", "thunderbird", "chrome"],
+        "Professional": ["gimp", "vs_code"],
+    }
+    for group_name, keys in groups.items():
+        if all(k in domain_result and len(domain_result[k]) > 0 for k in keys):
+            concat = []
+            for k in keys:
+                concat += domain_result[k]
+            print(group_name, "Success Rate:", sum(concat) / len(concat) * 100, "%")
 
-    with open(os.path.join(target_dir, "all_result.json"), "w") as f:
-        f.write(str(all_result_for_analysis))
+    with open(os.path.join(target_dir, "all_result.json"), "w", encoding="utf-8") as f:
+        f.write(json.dumps(all_result_for_analysis, ensure_ascii=False, indent=2))
 
     if not all_result:
         print("New experiment, no result yet.")
@@ -68,4 +73,13 @@ def get_result(action_space, use_model, observation_type, result_dir):
 
 
 if __name__ == '__main__':
-    get_result("pyautogui", "gpt-4o", "a11y_tree", "./results")
+    parser = argparse.ArgumentParser(description="Show OSWorld evaluation results")
+    parser.add_argument("--action_space", default="pyautogui")
+    parser.add_argument("--use_model", default="gpt-4o")
+    parser.add_argument("--observation_type", default="screenshot")
+    parser.add_argument("--result_dir", default="./results")
+    args = parser.parse_args()
+
+    # Example: match your GUI-Agent run defaults
+    #   --action_space pyautogui --observation_type screenshot --use_model qwen2.5-vl
+    get_result(args.action_space, args.use_model, args.observation_type, args.result_dir)

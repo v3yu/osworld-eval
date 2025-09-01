@@ -1,2 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250828@163833", "action": "WAIT", "response": "click(failed):bookmark icon or menu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@163833.png"}
-{"Error": "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263 - a bytes-like object is required, not 'NoneType'"}

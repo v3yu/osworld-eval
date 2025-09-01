@@ -1,2 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250828@213850", "action": "pyautogui.typewrite(\"Chart data for orders from Jan to Mar\"); pyautogui.press(\"enter\")", "response": "type:Chart data for orders from Jan to Mar", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@213850.png"}
-{"Error": "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08 - a bytes-like object is required, not 'NoneType'"}

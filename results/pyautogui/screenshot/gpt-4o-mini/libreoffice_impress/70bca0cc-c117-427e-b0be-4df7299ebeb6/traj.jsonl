@@ -1,2 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250829@025053", "action": "WAIT", "response": "click(failed):slide 2 title color element", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250829@025053.png"}
-{"Error": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6 - a bytes-like object is required, not 'NoneType'"}

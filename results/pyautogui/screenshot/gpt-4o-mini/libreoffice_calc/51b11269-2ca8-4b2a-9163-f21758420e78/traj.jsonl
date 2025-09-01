@@ -1,2 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250828@224752", "action": "WAIT", "response": "click(failed):sort button or dropdown for amounts", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250828@224752.png"}
-{"Error": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78 - a bytes-like object is required, not 'NoneType'"}

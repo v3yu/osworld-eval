@@ -102,7 +102,6 @@ def run_env_tasks(task_queue, args: argparse.Namespace, shared_scores):
             except Exception as e:
                 logging.getLogger("desktopenv.experiment").warning(f"Failed to resolve AWS AMI ID, proceeding without snapshot: {e}")
         env = DesktopEnv(
-            path_to_vm=args.path_to_vm,
             action_space=args.action_space,
             provider_name=args.provider_name,
             region=REGION,
