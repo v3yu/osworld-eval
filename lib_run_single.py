@@ -3,7 +3,6 @@ import json
 import logging
 import os
 import time
-from wrapt_timeout_decorator import *
 
 logger = logging.getLogger("desktopenv.experiment")
 
@@ -51,6 +50,16 @@ def run_single_example(agent, env, example, max_steps, instruction, args, exampl
                     "screenshot_file": f"step_{step_idx + 1}_{action_timestamp}.png"
                 }))
                 f.write("\n")
+            # If the action was a navigation/type/enter, give extra time once per iteration
+            try:
+                is_str = isinstance(action, str)
+                if is_str and ("typewrite(" in action or "press(\"enter\")" in action or "hotkey(\"ctrl\",\"l\")" in action):
+                    time.sleep(max(0.5, args.sleep_after_execution))
+                    # refresh obs to reflect possible page loads
+                    obs = env._get_obs()
+            except Exception:
+                pass
+
             if done:
                 logger.info("The episode is done.")
                 break

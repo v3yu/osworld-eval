@@ -28,7 +28,8 @@ def config() -> argparse.Namespace:
         default="screenshot",
         help="Observation type",
     )
-    parser.add_argument("--sleep_after_execution", type=float, default=0.0)
+    # Wait after each action so the VM UI can update before next observation
+    parser.add_argument("--sleep_after_execution", type=float, default=1.0)
     parser.add_argument("--max_steps", type=int, default=15)
 
     # agent/model config
