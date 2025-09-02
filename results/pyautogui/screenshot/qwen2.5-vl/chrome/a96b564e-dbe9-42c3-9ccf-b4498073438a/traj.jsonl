@@ -1,3 +1,20 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:d851a07209c7946fd96d28adc1aee1829f6f999cb688535b19ca67c9bc06a477
 size 10509
+{"step_num": 1, "action_timestamp": "20250902@075422", "action": "pyautogui.typewrite(\"community discussion\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:community discussion", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075422.png"}
+{"step_num": 1, "action_timestamp": "20250902@075425", "action": "WAIT", "response": "type:community discussion", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075425.png"}
+{"step_num": 2, "action_timestamp": "20250902@075428", "action": "pyautogui.click(1, 1425)", "response": "click:community discussion@(1,1425)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075428.png"}
+{"step_num": 3, "action_timestamp": "20250902@075431", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075431.png"}
+{"step_num": 4, "action_timestamp": "20250902@075434", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075434.png"}
+{"step_num": 5, "action_timestamp": "20250902@075438", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075438.png"}
+{"step_num": 6, "action_timestamp": "20250902@075442", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075442.png"}
+{"step_num": 7, "action_timestamp": "20250902@075446", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075446.png"}
+{"step_num": 8, "action_timestamp": "20250902@075450", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075450.png"}
+{"step_num": 9, "action_timestamp": "20250902@075453", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075453.png"}
+{"step_num": 10, "action_timestamp": "20250902@075456", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"forum\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:forum", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075456.png"}
+{"step_num": 10, "action_timestamp": "20250902@075459", "action": "WAIT", "response": "goto_url:forum", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075459.png"}
+{"step_num": 11, "action_timestamp": "20250902@075503", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075503.png"}
+{"step_num": 12, "action_timestamp": "20250902@075506", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075506.png"}
+{"step_num": 13, "action_timestamp": "20250902@075510", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075510.png"}
+{"step_num": 14, "action_timestamp": "20250902@075513", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075513.png"}
+{"step_num": 15, "action_timestamp": "20250902@075517", "action": "pyautogui.click(1, 998)", "response": "click:search input field@(1,998)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075517.png"}

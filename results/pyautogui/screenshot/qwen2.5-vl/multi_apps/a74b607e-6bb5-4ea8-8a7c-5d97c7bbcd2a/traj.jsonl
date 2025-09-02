@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:d23920e322aa89238d846bfdf158e369c8a2832c3638b8ee65c74bc9d5189e23
 size 11624
+{"step_num": 1, "action_timestamp": "20250902@075918", "action": "pyautogui.click(32, 133)", "response": "click:Desktop icon@(32,133)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075918.png"}
+{"step_num": 2, "action_timestamp": "20250902@075921", "action": "pyautogui.click(1, 32)", "response": "click:extension file on the desktop@(1,32)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075921.png"}
+{"step_num": 3, "action_timestamp": "20250902@075924", "action": "pyautogui.click(1, 32)", "response": "click:desktop icon @(32,133)@(1,32)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075924.png"}
+{"step_num": 4, "action_timestamp": "20250902@075927", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075927.png"}
+{"step_num": 5, "action_timestamp": "20250902@075930", "action": "pyautogui.click(1, 1491)", "response": "click:extension file on the desktop@(1,1491)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075930.png"}
+{"step_num": 6, "action_timestamp": "20250902@075933", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075933.png"}
+{"step_num": 7, "action_timestamp": "20250902@075936", "action": "pyautogui.click(1, 1157)", "response": "click:extension file on the desktop@(1,1157)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075936.png"}
+{"step_num": 8, "action_timestamp": "20250902@075938", "action": "pyautogui.click(1, 1470)", "response": "click:extension file on the desktop@(1,1470)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075938.png"}
+{"step_num": 9, "action_timestamp": "20250902@075941", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075941.png"}
+{"step_num": 10, "action_timestamp": "20250902@075944", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075944.png"}
+{"step_num": 11, "action_timestamp": "20250902@075947", "action": "pyautogui.click(1, 1157)", "response": "click:extension file on the desktop@(1,1157)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075947.png"}
+{"step_num": 12, "action_timestamp": "20250902@075950", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075950.png"}
+{"step_num": 13, "action_timestamp": "20250902@075954", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075954.png"}
+{"step_num": 14, "action_timestamp": "20250902@075956", "action": "pyautogui.click(1, 1484)", "response": "click:extension file on the desktop@(1,1484)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075956.png"}
+{"step_num": 15, "action_timestamp": "20250902@075958", "action": "pyautogui.click(1, 1157)", "response": "click:extension file on the desktop@(1,1157)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075958.png"}

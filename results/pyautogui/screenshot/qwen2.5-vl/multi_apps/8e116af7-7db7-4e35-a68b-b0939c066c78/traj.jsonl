@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:6a455ab2c6b7bf02022e2b06931877227c72873358642688e57a4eb10b5e5493
 size 12149
+{"step_num": 1, "action_timestamp": "20250902@080408", "action": "pyautogui.click(1, 341)", "response": "click:folder containing recent transactions@(1,341)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080408.png"}
+{"step_num": 2, "action_timestamp": "20250902@080410", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080410.png"}
+{"step_num": 3, "action_timestamp": "20250902@080413", "action": "pyautogui.click(1, 1108)", "response": "click:transactions menu item@(1,1108)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@080413.png"}
+{"step_num": 4, "action_timestamp": "20250902@080415", "action": "pyautogui.click(1, 1070)", "response": "click:transactions menu item@(1,1070)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@080415.png"}
+{"step_num": 5, "action_timestamp": "20250902@080417", "action": "pyautogui.click(1, 1031)", "response": "click:transactions menu item@(1,1031)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@080417.png"}
+{"step_num": 6, "action_timestamp": "20250902@080420", "action": "pyautogui.click(1, 1041)", "response": "click:transactions menu item@(1,1041)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@080420.png"}
+{"step_num": 7, "action_timestamp": "20250902@080423", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080423.png"}
+{"step_num": 8, "action_timestamp": "20250902@080426", "action": "WAIT", "response": "click(failed):transactions menu item @(1,1108)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080426.png"}
+{"step_num": 9, "action_timestamp": "20250902@080429", "action": "WAIT", "response": "click(failed):transactions menu item @(1,1108)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@080429.png"}
+{"step_num": 10, "action_timestamp": "20250902@080434", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@080434.png"}
+{"step_num": 11, "action_timestamp": "20250902@080438", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@080438.png"}
+{"step_num": 12, "action_timestamp": "20250902@080441", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@080441.png"}
+{"step_num": 13, "action_timestamp": "20250902@080445", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@080445.png"}
+{"step_num": 14, "action_timestamp": "20250902@080450", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@080450.png"}
+{"step_num": 15, "action_timestamp": "20250902@080454", "action": "pyautogui.click(1, 32)", "response": "click:previous folder navigation button@(1,32)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@080454.png"}

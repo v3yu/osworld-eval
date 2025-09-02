@@ -1,3 +1,20 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:799550c86bbee71572ca8eda28e4a147a5ced8f1acab5c2ebf661f7f0936e63e
 size 69
+{"step_num": 1, "action_timestamp": "20250902@075417", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075417.png"}
+{"step_num": 2, "action_timestamp": "20250902@075420", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"photo editing website\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:photo editing website", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075420.png"}
+{"step_num": 2, "action_timestamp": "20250902@075424", "action": "WAIT", "response": "goto_url:photo editing website", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075424.png"}
+{"step_num": 3, "action_timestamp": "20250902@075428", "action": "pyautogui.click(1, 372)", "response": "click:brightness adjustment tool@(1,372)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075428.png"}
+{"step_num": 4, "action_timestamp": "20250902@075430", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075430.png"}
+{"step_num": 5, "action_timestamp": "20250902@075434", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075434.png"}
+{"step_num": 6, "action_timestamp": "20250902@075439", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075439.png"}
+{"step_num": 7, "action_timestamp": "20250902@075443", "action": "pyautogui.click(1, 372)", "response": "click:brightness adjustment tool@(1,372)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075443.png"}
+{"step_num": 8, "action_timestamp": "20250902@075445", "action": "pyautogui.click(1, 1752)", "response": "click:brightness adjustment tool @(1,372)@(1,1752)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075445.png"}
+{"step_num": 9, "action_timestamp": "20250902@075448", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075448.png"}
+{"step_num": 10, "action_timestamp": "20250902@075452", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075452.png"}
+{"step_num": 11, "action_timestamp": "20250902@075456", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075456.png"}
+{"step_num": 12, "action_timestamp": "20250902@075500", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075500.png"}
+{"step_num": 13, "action_timestamp": "20250902@075503", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075503.png"}
+{"step_num": 14, "action_timestamp": "20250902@075506", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"image editing tool\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:image editing tool", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075506.png"}
+{"step_num": 14, "action_timestamp": "20250902@075509", "action": "WAIT", "response": "goto_url:image editing tool", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075509.png"}
+{"step_num": 15, "action_timestamp": "20250902@075513", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075513.png"}

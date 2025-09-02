@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:fc00e5f0d8310712aa495b6ae716d8efafc9a0ab36ace0a94b685769c7adf532
 size 9873
+{"step_num": 1, "action_timestamp": "20250902@075657", "action": "pyautogui.click(1, 154)", "response": "click:Column A header@(1,154)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075657.png"}
+{"step_num": 2, "action_timestamp": "20250902@075701", "action": "pyautogui.click(1, 477)", "response": "click:column header 'Names with duplicates'@(1,477)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075701.png"}
+{"step_num": 3, "action_timestamp": "20250902@075704", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075704.png"}
+{"step_num": 4, "action_timestamp": "20250902@075708", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075708.png"}
+{"step_num": 5, "action_timestamp": "20250902@075712", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075712.png"}
+{"step_num": 6, "action_timestamp": "20250902@075716", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075716.png"}
+{"step_num": 7, "action_timestamp": "20250902@075718", "action": "WAIT", "response": "click(failed):column header 'Names with duplicates'", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075718.png"}
+{"step_num": 8, "action_timestamp": "20250902@075722", "action": "WAIT", "response": "click(failed):column header 'Unique Names'", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075722.png"}
+{"step_num": 9, "action_timestamp": "20250902@075725", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075725.png"}
+{"step_num": 10, "action_timestamp": "20250902@075729", "action": "WAIT", "response": "click(failed):column header 'Names with duplicates'", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075729.png"}
+{"step_num": 11, "action_timestamp": "20250902@075732", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075732.png"}
+{"step_num": 12, "action_timestamp": "20250902@075736", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075736.png"}
+{"step_num": 13, "action_timestamp": "20250902@075739", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075739.png"}
+{"step_num": 14, "action_timestamp": "20250902@075742", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075742.png"}
+{"step_num": 15, "action_timestamp": "20250902@075747", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075747.png"}

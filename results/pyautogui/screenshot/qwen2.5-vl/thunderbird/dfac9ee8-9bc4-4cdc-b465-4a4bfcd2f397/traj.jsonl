@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:99b875fccbe0b19549271983360400d2902f41ba092eafb76859d6b6e0c35b36
 size 11415
+{"step_num": 1, "action_timestamp": "20250902@080623", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080623.png"}
+{"step_num": 2, "action_timestamp": "20250902@080626", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080626.png"}
+{"step_num": 3, "action_timestamp": "20250902@080629", "action": "pyautogui.click(471, 335)", "response": "click:email account settings@(471,335)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@080629.png"}
+{"step_num": 4, "action_timestamp": "20250902@080632", "action": "pyautogui.click(1, 1851)", "response": "click:main settings page @(100,200)@(1,1851)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@080632.png"}
+{"step_num": 5, "action_timestamp": "20250902@080634", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@080634.png"}
+{"step_num": 6, "action_timestamp": "20250902@080637", "action": "pyautogui.click(1, 848)", "response": "click:email account settings @(471,335)@(1,848)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@080637.png"}
+{"step_num": 7, "action_timestamp": "20250902@080641", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080641.png"}
+{"step_num": 8, "action_timestamp": "20250902@080645", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080645.png"}
+{"step_num": 9, "action_timestamp": "20250902@080649", "action": "pyautogui.click(1, 730)", "response": "click:main settings page @(100,200)@(1,730)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@080649.png"}
+{"step_num": 10, "action_timestamp": "20250902@080651", "action": "pyautogui.scroll(-800)", "response": "scroll:down", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@080651.png"}
+{"step_num": 11, "action_timestamp": "20250902@080654", "action": "pyautogui.click(1, 1051)", "response": "click:main settings page@(1,1051)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@080654.png"}
+{"step_num": 12, "action_timestamp": "20250902@080657", "action": "pyautogui.click(1, 730)", "response": "click:main settings page @(100,200)@(1,730)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@080657.png"}
+{"step_num": 13, "action_timestamp": "20250902@080700", "action": "pyautogui.click(1, 1052)", "response": "click:main settings page @(100,200)@(1,1052)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@080700.png"}
+{"step_num": 14, "action_timestamp": "20250902@080703", "action": "pyautogui.click(1, 726)", "response": "click:main settings page @(100,200)@(1,726)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@080703.png"}
+{"step_num": 15, "action_timestamp": "20250902@080706", "action": "pyautogui.click(1, 1051)", "response": "click:main settings page @(1,1051)@(1,1051)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@080706.png"}

@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:911cc9133d7765e4717e3508010c7f4300b5d0de9610d5239bab043c7404c7aa
 size 347
+{"step_num": 1, "action_timestamp": "20250902@075827", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075827.png"}
+{"step_num": 2, "action_timestamp": "20250902@075833", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075833.png"}
+{"step_num": 3, "action_timestamp": "20250902@075837", "action": "pyautogui.click(1, 1035)", "response": "click:1@(1,1035)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075837.png"}
+{"step_num": 4, "action_timestamp": "20250902@075841", "action": "pyautogui.click(1, 1634)", "response": "click:paragraph formatting options@(1,1634)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075841.png"}
+{"step_num": 5, "action_timestamp": "20250902@075844", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075844.png"}
+{"step_num": 6, "action_timestamp": "20250902@075847", "action": "pyautogui.click(1439, 147)", "response": "click:paragraph formatting options@(1439,147)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075847.png"}
+{"step_num": 7, "action_timestamp": "20250902@075850", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075850.png"}
+{"step_num": 8, "action_timestamp": "20250902@075853", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075853.png"}
+{"step_num": 9, "action_timestamp": "20250902@075857", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075857.png"}
+{"step_num": 10, "action_timestamp": "20250902@075901", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075901.png"}
+{"step_num": 11, "action_timestamp": "20250902@075904", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075904.png"}
+{"step_num": 12, "action_timestamp": "20250902@075909", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075909.png"}
+{"step_num": 13, "action_timestamp": "20250902@075914", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075914.png"}
+{"step_num": 14, "action_timestamp": "20250902@075918", "action": "pyautogui.click(1, 1000)", "response": "click:text editor or content area@(1,1000)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075918.png"}
+{"step_num": 15, "action_timestamp": "20250902@075921", "action": "pyautogui.click(1, 1000)", "response": "click:text editor or content area@(1,1000)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075921.png"}

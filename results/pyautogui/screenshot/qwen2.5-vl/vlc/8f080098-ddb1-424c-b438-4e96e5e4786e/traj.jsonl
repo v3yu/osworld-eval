@@ -1,3 +1,21 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:728162bef7c822153d7e3e43d2d1d05f16d2618ba432192fc9149a883c6ae5cc
 size 3267
+{"step_num": 1, "action_timestamp": "20250902@080813", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"music video conversion\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:music video conversion", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080813.png"}
+{"step_num": 1, "action_timestamp": "20250902@080817", "action": "WAIT", "response": "goto_url:music video conversion", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080817.png"}
+{"step_num": 2, "action_timestamp": "20250902@080821", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080821.png"}
+{"step_num": 3, "action_timestamp": "20250902@080825", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@080825.png"}
+{"step_num": 4, "action_timestamp": "20250902@080828", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@080828.png"}
+{"step_num": 5, "action_timestamp": "20250902@080832", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@080832.png"}
+{"step_num": 6, "action_timestamp": "20250902@080835", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@080835.png"}
+{"step_num": 7, "action_timestamp": "20250902@080839", "action": "pyautogui.typewrite(\"Baby Justin Bieber\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:Baby Justin Bieber", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080839.png"}
+{"step_num": 7, "action_timestamp": "20250902@080843", "action": "WAIT", "response": "type:Baby Justin Bieber", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080843.png"}
+{"step_num": 8, "action_timestamp": "20250902@080846", "action": "pyautogui.typewrite(\"download Baby Justin Bieber\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:download Baby Justin Bieber", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080846.png"}
+{"step_num": 8, "action_timestamp": "20250902@080849", "action": "WAIT", "response": "type:download Baby Justin Bieber", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080849.png"}
+{"step_num": 9, "action_timestamp": "20250902@080852", "action": "pyautogui.click(1, 1321)", "response": "click:download button@(1,1321)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@080852.png"}
+{"step_num": 10, "action_timestamp": "20250902@080854", "action": "pyautogui.click(1, 1412)", "response": "click:download button@(1,1412)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@080854.png"}
+{"step_num": 11, "action_timestamp": "20250902@080857", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@080857.png"}
+{"step_num": 12, "action_timestamp": "20250902@080901", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@080901.png"}
+{"step_num": 13, "action_timestamp": "20250902@080904", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@080904.png"}
+{"step_num": 14, "action_timestamp": "20250902@080907", "action": "pyautogui.click(1, 1288)", "response": "click:download button@(1,1288)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@080907.png"}
+{"step_num": 15, "action_timestamp": "20250902@080909", "action": "pyautogui.click(1, 1372)", "response": "click:download button@(1,1372)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@080909.png"}

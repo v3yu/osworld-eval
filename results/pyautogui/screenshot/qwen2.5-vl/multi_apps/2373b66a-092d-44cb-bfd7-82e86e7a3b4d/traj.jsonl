@@ -1,3 +1,18 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:c31eb4d3aa2a1f68dabee754a9c273cc8e4e1a125cdfa7764051b727b5558443
 size 509
+{"step_num": 1, "action_timestamp": "20250902@080514", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080514.png"}
+{"step_num": 2, "action_timestamp": "20250902@080520", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080520.png"}
+{"step_num": 3, "action_timestamp": "20250902@080527", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@080527.png"}
+{"step_num": 4, "action_timestamp": "20250902@080532", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@080532.png"}
+{"step_num": 5, "action_timestamp": "20250902@080537", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@080537.png"}
+{"step_num": 6, "action_timestamp": "20250902@080541", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@080541.png"}
+{"step_num": 7, "action_timestamp": "20250902@080546", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080546.png"}
+{"step_num": 8, "action_timestamp": "20250902@080552", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080552.png"}
+{"step_num": 9, "action_timestamp": "20250902@080557", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@080557.png"}
+{"step_num": 10, "action_timestamp": "20250902@080602", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@080602.png"}
+{"step_num": 11, "action_timestamp": "20250902@080607", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@080607.png"}
+{"step_num": 12, "action_timestamp": "20250902@080612", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@080612.png"}
+{"step_num": 13, "action_timestamp": "20250902@080618", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@080618.png"}
+{"step_num": 14, "action_timestamp": "20250902@080624", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@080624.png"}
+{"step_num": 15, "action_timestamp": "20250902@080629", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@080629.png"}

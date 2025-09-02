@@ -1,3 +1,21 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:f117b1b7bbdb167f381b6d92244edf46da65844fa15d056deb89ccb6dea92813
 size 385
+{"step_num": 1, "action_timestamp": "20250902@075421", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"amazon\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:amazon", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075421.png"}
+{"step_num": 1, "action_timestamp": "20250902@075424", "action": "WAIT", "response": "goto_url:amazon", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075424.png"}
+{"step_num": 2, "action_timestamp": "20250902@075427", "action": "pyautogui.typewrite(\"clear Amazon tracking data\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:clear Amazon tracking data", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075427.png"}
+{"step_num": 2, "action_timestamp": "20250902@075430", "action": "WAIT", "response": "type:clear Amazon tracking data", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075430.png"}
+{"step_num": 3, "action_timestamp": "20250902@075434", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075434.png"}
+{"step_num": 4, "action_timestamp": "20250902@075437", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075437.png"}
+{"step_num": 5, "action_timestamp": "20250902@075441", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075441.png"}
+{"step_num": 6, "action_timestamp": "20250902@075444", "action": "pyautogui.click(1, 210)", "response": "click:clear Amazon tracking data@(1,210)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075444.png"}
+{"step_num": 7, "action_timestamp": "20250902@075446", "action": "pyautogui.click(1, 210)", "response": "click:clear Amazon tracking data@(1,210)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075446.png"}
+{"step_num": 8, "action_timestamp": "20250902@075448", "action": "pyautogui.typewrite(\"clear Amazon tracking data\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:clear Amazon tracking data", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075448.png"}
+{"step_num": 8, "action_timestamp": "20250902@075451", "action": "WAIT", "response": "type:clear Amazon tracking data", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075451.png"}
+{"step_num": 9, "action_timestamp": "20250902@075454", "action": "pyautogui.click(1, 1012)", "response": "click:clear Amazon tracking data@(1,1012)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075454.png"}
+{"step_num": 10, "action_timestamp": "20250902@075456", "action": "pyautogui.click(1, 1122)", "response": "click:clear Amazon tracking data @(1,210)@(1,1122)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075456.png"}
+{"step_num": 11, "action_timestamp": "20250902@075458", "action": "pyautogui.click(1, 1070)", "response": "click:clear Amazon tracking data @(1,210)@(1,1070)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075458.png"}
+{"step_num": 12, "action_timestamp": "20250902@075500", "action": "pyautogui.click(1, 1070)", "response": "click:clear Amazon tracking data@(1,1070)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075500.png"}
+{"step_num": 13, "action_timestamp": "20250902@075503", "action": "pyautogui.click(1, 1108)", "response": "click:clear Amazon tracking data @(1,1070)@(1,1108)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075503.png"}
+{"step_num": 14, "action_timestamp": "20250902@075505", "action": "pyautogui.click(1, 1112)", "response": "click:clear cookies and site data option@(1,1112)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075505.png"}
+{"step_num": 15, "action_timestamp": "20250902@075509", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075509.png"}
