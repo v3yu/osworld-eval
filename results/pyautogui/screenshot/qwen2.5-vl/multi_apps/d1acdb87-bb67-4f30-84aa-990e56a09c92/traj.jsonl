@@ -1,3 +1,7 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:56d70a6cb75dee4f8d1b5b8fa1281a104fb406b230c8b76d0a117580a341331f
 size 3001
+{"step_num": 1, "action_timestamp": "20250902@080348", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"https://www.google.com/maps/search/Hong%20Kong%20must-visit%20restaurants\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:https://www.google.com/maps/search/Hong%20Kong%20must-visit%20restaurants", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080348.png"}
+{"step_num": 1, "action_timestamp": "20250902@080352", "action": "WAIT", "response": "goto_url:https://www.google.com/maps/search/Hong%20Kong%20must-visit%20restaurants", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080352.png"}
+{"step_num": 2, "action_timestamp": "20250902@080355", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080355.png"}
+{"Error": "multi_apps/d1acdb87-bb67-4f30-84aa-990e56a09c92 - argument of type 'NoneType' is not iterable"}

@@ -1,3 +1,19 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:a6c235731487a10efddac56fde2924dbe5effd2294930cc396bd3275bf5e9f03
 size 1477
+{"step_num": 1, "action_timestamp": "20250902@080719", "action": "pyautogui.hotkey(\"ctrl\",\"l\"); time.sleep(0.2); pyautogui.typewrite(\"thunderbird download page\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "goto_url:thunderbird download page", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080719.png"}
+{"step_num": 1, "action_timestamp": "20250902@080722", "action": "WAIT", "response": "goto_url:thunderbird download page", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@080722.png"}
+{"step_num": 2, "action_timestamp": "20250902@080725", "action": "pyautogui.click(345, 810)", "response": "click:link to download Thunderbird@(345,810)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@080725.png"}
+{"step_num": 3, "action_timestamp": "20250902@080728", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@080728.png"}
+{"step_num": 4, "action_timestamp": "20250902@080732", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@080732.png"}
+{"step_num": 5, "action_timestamp": "20250902@080735", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@080735.png"}
+{"step_num": 6, "action_timestamp": "20250902@080738", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@080738.png"}
+{"step_num": 7, "action_timestamp": "20250902@080742", "action": "pyautogui.click(1, 1491)", "response": "click:link to download Thunderbird@(1,1491)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@080742.png"}
+{"step_num": 8, "action_timestamp": "20250902@080745", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@080745.png"}
+{"step_num": 9, "action_timestamp": "20250902@080748", "action": "pyautogui.click(1, 848)", "response": "click:link to download Thunderbird@(1,848)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@080748.png"}
+{"step_num": 10, "action_timestamp": "20250902@080750", "action": "pyautogui.click(1, 848)", "response": "click:link to download Thunderbird@(1,848)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@080750.png"}
+{"step_num": 11, "action_timestamp": "20250902@080752", "action": "pyautogui.click(1, 852)", "response": "click:link to download Thunderbird@(1,852)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@080752.png"}
+{"step_num": 12, "action_timestamp": "20250902@080755", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@080755.png"}
+{"step_num": 13, "action_timestamp": "20250902@080758", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@080758.png"}
+{"step_num": 14, "action_timestamp": "20250902@080802", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@080802.png"}
+{"step_num": 15, "action_timestamp": "20250902@080805", "action": "pyautogui.click(1, 848)", "response": "click:link to download Thunderbird@(1,848)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@080805.png"}

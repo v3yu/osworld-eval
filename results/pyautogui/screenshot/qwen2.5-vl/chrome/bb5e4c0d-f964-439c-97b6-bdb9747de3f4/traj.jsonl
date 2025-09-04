@@ -1,3 +1,20 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:5a363d67f1e4717b64bcb2aede5f19c32eec72d12da0956ba33cd763c520893c
 size 10748
+{"step_num": 1, "action_timestamp": "20250902@075413", "action": "pyautogui.typewrite(\"settings\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:settings", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075413.png"}
+{"step_num": 1, "action_timestamp": "20250902@075416", "action": "WAIT", "response": "type:settings", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075416.png"}
+{"step_num": 2, "action_timestamp": "20250902@075420", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075420.png"}
+{"step_num": 3, "action_timestamp": "20250902@075422", "action": "pyautogui.typewrite(\"set Bing as default search engine\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:set Bing as default search engine", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075422.png"}
+{"step_num": 3, "action_timestamp": "20250902@075425", "action": "WAIT", "response": "type:set Bing as default search engine", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075425.png"}
+{"step_num": 4, "action_timestamp": "20250902@075429", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075429.png"}
+{"step_num": 5, "action_timestamp": "20250902@075432", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@075432.png"}
+{"step_num": 6, "action_timestamp": "20250902@075435", "action": "pyautogui.click(1118, 168)", "response": "click:search button@(1118,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@075435.png"}
+{"step_num": 7, "action_timestamp": "20250902@075437", "action": "pyautogui.click(1122, 168)", "response": "click:search button@(1122,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@075437.png"}
+{"step_num": 8, "action_timestamp": "20250902@075439", "action": "pyautogui.click(1118, 168)", "response": "click:search button@(1118,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@075439.png"}
+{"step_num": 9, "action_timestamp": "20250902@075442", "action": "pyautogui.click(1740, 168)", "response": "click:settings button@(1740,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@075442.png"}
+{"step_num": 10, "action_timestamp": "20250902@075444", "action": "pyautogui.click(1118, 168)", "response": "click:search button@(1118,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@075444.png"}
+{"step_num": 11, "action_timestamp": "20250902@075447", "action": "pyautogui.click(1740, 168)", "response": "click:settings button or link@(1740,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@075447.png"}
+{"step_num": 12, "action_timestamp": "20250902@075450", "action": "pyautogui.click(1742, 168)", "response": "click:settings button@(1742,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@075450.png"}
+{"step_num": 13, "action_timestamp": "20250902@075453", "action": "pyautogui.click(1740, 168)", "response": "click:settings button @(1740,168)@(1740,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@075453.png"}
+{"step_num": 14, "action_timestamp": "20250902@075456", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@075456.png"}
+{"step_num": 15, "action_timestamp": "20250902@075459", "action": "pyautogui.click(1742, 168)", "response": "click:browser settings button@(1742,168)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@075459.png"}

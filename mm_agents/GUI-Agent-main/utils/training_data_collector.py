@@ -561,64 +561,6 @@ class TrainingDataCollector:
             print(f"Error saving actual model input: {e}")
             return ""
     
-    def collect_interaction_with_actual_input(self,
-                                            original_messages: List[Dict[str, Any]],
-                                            actual_model_input: List[Dict[str, Any]],
-                                            response: Any,
-                                            functions: Optional[List[Dict]] = None,
-                                            context: Optional[Dict[str, Any]] = None) -> str:
-        """
-        Collect both the actual model input and the response
-        
-        Args:
-            original_messages: Original messages before preprocessing
-            actual_model_input: Actual messages sent to the model (after preprocessing)
-            response: Model response
-            functions: Functions that were available
-            context: Additional context
-            
-        Returns:
-            Path to the saved JSON file
-        """
-        if not self.enabled:
-            return ""
-        
-        # Process messages to preserve image data
-        processed_original = self._process_messages_with_images(original_messages)
-        processed_actual = self._process_messages_with_images(actual_model_input)
-        
-        # Generate unique filename
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-        filename = f"complete_interaction_{timestamp}_{uuid.uuid4().hex[:8]}.json"
-        filepath = self.output_dir / filename
-        
-        # Prepare the data structure
-        data = {
-            "session_id": self.session_id,
-            "session_start": self.session_start.isoformat(),
-            "timestamp": datetime.now().isoformat(),
-            "original_messages": processed_original,
-            "actual_model_input": processed_actual,
-            "response": self._serialize_response(response),
-            "functions": functions or [],
-            "context": context or {},
-            "metadata": {
-                "filename": filename,
-                "filepath": str(filepath),
-                "input_type": "complete_interaction"
-            }
-        }
-        
-        # Save to JSON file
-        try:
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-            print(f"Complete interaction saved: {filepath}")
-            return str(filepath)
-        except Exception as e:
-            print(f"Error saving complete interaction: {e}")
-            return ""
-    
     def end_trajectory(self, trajectory_summary: Optional[Dict[str, Any]] = None) -> str:
         """
         End the current trajectory and save it to a JSON file

@@ -1,3 +1,8 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:729127a0e2d3545838e16a7e6870c0f9dfe9362efe5183f11d36860586282e03
 size 11455
+{"step_num": 1, "action_timestamp": "20250902@075639", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@075639.png"}
+{"step_num": 2, "action_timestamp": "20250902@075645", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@075645.png"}
+{"step_num": 3, "action_timestamp": "20250902@075649", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@075649.png"}
+{"step_num": 4, "action_timestamp": "20250902@075653", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@075653.png"}
+{"step_num": 5, "action_timestamp": "20250902@075658", "action": "DONE", "response": "The total earned amount is $600.", "reward": 0, "done": true, "info": {"done": true}, "screenshot_file": "step_5_20250902@075658.png"}
