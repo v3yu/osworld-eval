@@ -1,0 +1,50 @@
+{"step_num": 1, "action_timestamp": "20250902@123851", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@123851.png"}
+{"step_num": 2, "action_timestamp": "20250902@123856", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@123856.png"}
+{"step_num": 3, "action_timestamp": "20250902@123859", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@123859.png"}
+{"step_num": 4, "action_timestamp": "20250902@123902", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@123902.png"}
+{"step_num": 5, "action_timestamp": "20250902@123906", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@123906.png"}
+{"step_num": 6, "action_timestamp": "20250902@123910", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@123910.png"}
+{"step_num": 7, "action_timestamp": "20250902@123914", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@123914.png"}
+{"step_num": 8, "action_timestamp": "20250902@123916", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@123916.png"}
+{"step_num": 9, "action_timestamp": "20250902@123920", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@123920.png"}
+{"step_num": 10, "action_timestamp": "20250902@123924", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@123924.png"}
+{"step_num": 11, "action_timestamp": "20250902@123929", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@123929.png"}
+{"step_num": 12, "action_timestamp": "20250902@123933", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@123933.png"}
+{"step_num": 13, "action_timestamp": "20250902@123938", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@123938.png"}
+{"step_num": 14, "action_timestamp": "20250902@123942", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@123942.png"}
+{"step_num": 15, "action_timestamp": "20250902@123946", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@123946.png"}
+{"step_num": 16, "action_timestamp": "20250902@123948", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_16_20250902@123948.png"}
+{"step_num": 17, "action_timestamp": "20250902@123952", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_17_20250902@123952.png"}
+{"step_num": 18, "action_timestamp": "20250902@123956", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_18_20250902@123956.png"}
+{"step_num": 19, "action_timestamp": "20250902@124001", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_19_20250902@124001.png"}
+{"step_num": 20, "action_timestamp": "20250902@124006", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_20_20250902@124006.png"}
+{"step_num": 21, "action_timestamp": "20250902@124010", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_21_20250902@124010.png"}
+{"step_num": 22, "action_timestamp": "20250902@124014", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_22_20250902@124014.png"}
+{"step_num": 23, "action_timestamp": "20250902@124018", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_23_20250902@124018.png"}
+{"step_num": 24, "action_timestamp": "20250902@124020", "action": "pyautogui.click(1, 36)", "response": "click:browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_24_20250902@124020.png"}
+{"step_num": 25, "action_timestamp": "20250902@124024", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_25_20250902@124024.png"}
+{"step_num": 26, "action_timestamp": "20250902@124029", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_26_20250902@124029.png"}
+{"step_num": 27, "action_timestamp": "20250902@124033", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_27_20250902@124033.png"}
+{"step_num": 28, "action_timestamp": "20250902@124038", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_28_20250902@124038.png"}
+{"step_num": 29, "action_timestamp": "20250902@124042", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_29_20250902@124042.png"}
+{"step_num": 30, "action_timestamp": "20250902@124046", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_30_20250902@124046.png"}
+{"step_num": 31, "action_timestamp": "20250902@124051", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_31_20250902@124051.png"}
+{"step_num": 32, "action_timestamp": "20250902@124054", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_32_20250902@124054.png"}
+{"step_num": 33, "action_timestamp": "20250902@124056", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_33_20250902@124056.png"}
+{"step_num": 34, "action_timestamp": "20250902@124059", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_34_20250902@124059.png"}
+{"step_num": 35, "action_timestamp": "20250902@124104", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_35_20250902@124104.png"}
+{"step_num": 36, "action_timestamp": "20250902@124109", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_36_20250902@124109.png"}
+{"step_num": 37, "action_timestamp": "20250902@124113", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_37_20250902@124113.png"}
+{"step_num": 38, "action_timestamp": "20250902@124118", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_38_20250902@124118.png"}
+{"step_num": 39, "action_timestamp": "20250902@124122", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_39_20250902@124122.png"}
+{"step_num": 40, "action_timestamp": "20250902@124127", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_40_20250902@124127.png"}
+{"step_num": 41, "action_timestamp": "20250902@124130", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_41_20250902@124130.png"}
+{"step_num": 42, "action_timestamp": "20250902@124133", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_42_20250902@124133.png"}
+{"step_num": 43, "action_timestamp": "20250902@124136", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_43_20250902@124136.png"}
+{"step_num": 44, "action_timestamp": "20250902@124140", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_44_20250902@124140.png"}
+{"step_num": 45, "action_timestamp": "20250902@124145", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_45_20250902@124145.png"}
+{"step_num": 46, "action_timestamp": "20250902@124149", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_46_20250902@124149.png"}
+{"step_num": 47, "action_timestamp": "20250902@124153", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_47_20250902@124153.png"}
+{"step_num": 48, "action_timestamp": "20250902@124158", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_48_20250902@124158.png"}
+{"step_num": 49, "action_timestamp": "20250902@124201", "action": "pyautogui.click(1, 1047)", "response": "click:No Thanks button@(1,1047)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_49_20250902@124201.png"}
+{"step_num": 50, "action_timestamp": "20250902@124204", "action": "pyautogui.click(1, 36)", "response": "click:Chrome browser icon@(1,36)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_50_20250902@124204.png"}

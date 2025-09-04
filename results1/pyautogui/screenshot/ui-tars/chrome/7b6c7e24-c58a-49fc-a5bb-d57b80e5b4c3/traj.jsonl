@@ -1,0 +1,7 @@
+{"step_num": 1, "action_timestamp": "20250904@080606", "action": "WAIT", "response": "click(failed):search button", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250904@080606.png"}
+{"step_num": 2, "action_timestamp": "20250904@080609", "action": "WAIT", "response": "click(failed):1", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250904@080609.png"}
+{"step_num": 3, "action_timestamp": "20250904@080612", "action": "WAIT", "response": "click(failed):1", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250904@080612.png"}
+{"step_num": 4, "action_timestamp": "20250904@080614", "action": "WAIT", "response": "click(failed):1", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250904@080614.png"}
+{"step_num": 5, "action_timestamp": "20250904@080617", "action": "WAIT", "response": "click(failed):1", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250904@080617.png"}
+{"step_num": 6, "action_timestamp": "20250904@080620", "action": "WAIT", "response": "click(failed):1", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250904@080620.png"}
+{"step_num": 7, "action_timestamp": "20250904@080622", "action": "WAIT", "response": "click(failed):the search box", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250904@080622.png"}

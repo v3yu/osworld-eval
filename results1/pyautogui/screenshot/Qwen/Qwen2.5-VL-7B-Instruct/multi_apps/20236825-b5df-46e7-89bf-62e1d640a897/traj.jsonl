@@ -1,0 +1,14 @@
+{"step_num": 1, "action_timestamp": "20250902@152359", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@152359.png"}
+{"step_num": 2, "action_timestamp": "20250902@152404", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@152404.png"}
+{"step_num": 3, "action_timestamp": "20250902@152408", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@152408.png"}
+{"step_num": 4, "action_timestamp": "20250902@152413", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@152413.png"}
+{"step_num": 5, "action_timestamp": "20250902@152418", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@152418.png"}
+{"step_num": 6, "action_timestamp": "20250902@152422", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@152422.png"}
+{"step_num": 7, "action_timestamp": "20250902@152427", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@152427.png"}
+{"step_num": 8, "action_timestamp": "20250902@152430", "action": "pyautogui.typewrite(\"bubbleSort\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:bubbleSort", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@152430.png"}
+{"step_num": 8, "action_timestamp": "20250902@152433", "action": "WAIT", "response": "type:bubbleSort", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@152433.png"}
+{"step_num": 9, "action_timestamp": "20250902@152436", "action": "pyautogui.click(1, 90)", "response": "click:File menu@(1,90)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@152436.png"}
+{"step_num": 10, "action_timestamp": "20250902@152440", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@152440.png"}
+{"step_num": 11, "action_timestamp": "20250902@152443", "action": "pyautogui.typewrite(\"bubbleSort\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:bubbleSort", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@152443.png"}
+{"step_num": 11, "action_timestamp": "20250902@152446", "action": "WAIT", "response": "type:bubbleSort", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@152446.png"}
+{"Error": "multi_apps/20236825-b5df-46e7-89bf-62e1d640a897 - 'arguments'"}

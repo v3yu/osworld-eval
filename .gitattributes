@@ -1,2 +1,6 @@
 results/ filter=lfs diff=lfs merge=lfs -text
 results filter=lfs diff=lfs merge=lfs -text
+results/**/*.png filter=lfs diff=lfs merge=lfs -text
+results/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+results1/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+results1/**/*.png filter=lfs diff=lfs merge=lfs -text

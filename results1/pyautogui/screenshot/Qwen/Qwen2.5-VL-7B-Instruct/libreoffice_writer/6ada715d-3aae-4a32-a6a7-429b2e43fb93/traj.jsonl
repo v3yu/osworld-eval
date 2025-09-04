@@ -1,0 +1,15 @@
+{"step_num": 1, "action_timestamp": "20250902@142602", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@142602.png"}
+{"step_num": 2, "action_timestamp": "20250902@142606", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@142606.png"}
+{"step_num": 3, "action_timestamp": "20250902@142611", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@142611.png"}
+{"step_num": 4, "action_timestamp": "20250902@142615", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@142615.png"}
+{"step_num": 5, "action_timestamp": "20250902@142619", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@142619.png"}
+{"step_num": 6, "action_timestamp": "20250902@142623", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@142623.png"}
+{"step_num": 7, "action_timestamp": "20250902@142627", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@142627.png"}
+{"step_num": 8, "action_timestamp": "20250902@142631", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@142631.png"}
+{"step_num": 9, "action_timestamp": "20250902@142635", "action": "pyautogui.click(1, 1744)", "response": "click:left mouse button@(1,1744)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@142635.png"}
+{"step_num": 10, "action_timestamp": "20250902@142638", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@142638.png"}
+{"step_num": 11, "action_timestamp": "20250902@142642", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@142642.png"}
+{"step_num": 12, "action_timestamp": "20250902@142646", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@142646.png"}
+{"step_num": 13, "action_timestamp": "20250902@142650", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@142650.png"}
+{"step_num": 14, "action_timestamp": "20250902@142654", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@142654.png"}
+{"step_num": 15, "action_timestamp": "20250902@142657", "action": "DONE", "response": "The task cannot be completed as there is no screenshot named 1.png on the desktop.", "reward": 0, "done": true, "info": {"done": true}, "screenshot_file": "step_15_20250902@142657.png"}

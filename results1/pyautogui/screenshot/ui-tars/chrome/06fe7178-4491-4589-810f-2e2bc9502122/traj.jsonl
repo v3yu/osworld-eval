@@ -1,0 +1,5 @@
+{"step_num": 1, "action_timestamp": "20250904@080613", "action": "WAIT", "response": "click(failed):Where", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250904@080613.png"}
+{"step_num": 2, "action_timestamp": "20250904@080616", "action": "WAIT", "response": "click(failed):Where", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250904@080616.png"}
+{"step_num": 3, "action_timestamp": "20250904@080619", "action": "WAIT", "response": "click(failed):Where", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250904@080619.png"}
+{"step_num": 4, "action_timestamp": "20250904@080622", "action": "WAIT", "response": "click(failed):Where", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250904@080622.png"}
+{"step_num": 5, "action_timestamp": "20250904@080625", "action": "WAIT", "response": "click(failed):Where", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250904@080625.png"}

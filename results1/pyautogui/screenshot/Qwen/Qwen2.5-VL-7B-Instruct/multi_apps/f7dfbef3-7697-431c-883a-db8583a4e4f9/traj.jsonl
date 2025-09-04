@@ -1,0 +1,10 @@
+{"step_num": 1, "action_timestamp": "20250902@144421", "action": "pyautogui.typewrite(\"cd ~/Desktop\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:cd ~/Desktop", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@144421.png"}
+{"step_num": 1, "action_timestamp": "20250902@144424", "action": "WAIT", "response": "type:cd ~/Desktop", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@144424.png"}
+{"step_num": 2, "action_timestamp": "20250902@144428", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@144428.png"}
+{"step_num": 3, "action_timestamp": "20250902@144433", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@144433.png"}
+{"step_num": 4, "action_timestamp": "20250902@144437", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@144437.png"}
+{"step_num": 5, "action_timestamp": "20250902@144442", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@144442.png"}
+{"step_num": 6, "action_timestamp": "20250902@144446", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@144446.png"}
+{"step_num": 7, "action_timestamp": "20250902@144449", "action": "pyautogui.typewrite(\"cd ~/Desktop\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:cd ~/Desktop", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@144449.png"}
+{"step_num": 7, "action_timestamp": "20250902@144451", "action": "WAIT", "response": "type:cd ~/Desktop", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@144451.png"}
+{"Error": "multi_apps/f7dfbef3-7697-431c-883a-db8583a4e4f9 - 'name'"}

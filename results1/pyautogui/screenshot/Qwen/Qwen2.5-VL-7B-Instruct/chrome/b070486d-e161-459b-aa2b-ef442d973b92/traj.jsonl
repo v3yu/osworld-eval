@@ -1,0 +1,15 @@
+{"step_num": 1, "action_timestamp": "20250902@123644", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@123644.png"}
+{"step_num": 2, "action_timestamp": "20250902@123647", "action": "pyautogui.typewrite(\"Tamiflu\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:Tamiflu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@123647.png"}
+{"step_num": 2, "action_timestamp": "20250902@123649", "action": "WAIT", "response": "type:Tamiflu", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@123649.png"}
+{"step_num": 3, "action_timestamp": "20250902@123653", "action": "pyautogui.click(1, 1404)", "response": "click:search button@(1,1404)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@123653.png"}
+{"step_num": 4, "action_timestamp": "20250902@123656", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@123656.png"}
+{"step_num": 5, "action_timestamp": "20250902@123659", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@123659.png"}
+{"step_num": 6, "action_timestamp": "20250902@123703", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@123703.png"}
+{"step_num": 7, "action_timestamp": "20250902@123707", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@123707.png"}
+{"step_num": 8, "action_timestamp": "20250902@123710", "action": "pyautogui.click(1, 852)", "response": "click:search button@(1,852)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@123710.png"}
+{"step_num": 9, "action_timestamp": "20250902@123713", "action": "pyautogui.click(1, 909)", "response": "click:search input field@(1,909)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@123713.png"}
+{"step_num": 10, "action_timestamp": "20250902@123715", "action": "pyautogui.click(1, 921)", "response": "click:search input field@(1,921)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@123715.png"}
+{"step_num": 11, "action_timestamp": "20250902@123717", "action": "pyautogui.typewrite(\"Tamiflu side effects\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:Tamiflu side effects", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@123717.png"}
+{"step_num": 11, "action_timestamp": "20250902@123720", "action": "WAIT", "response": "type:Tamiflu side effects", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@123720.png"}
+{"step_num": 12, "action_timestamp": "20250902@123724", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@123724.png"}
+{"Error": "chrome/b070486d-e161-459b-aa2b-ef442d973b92 - 'arguments'"}

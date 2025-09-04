@@ -1,0 +1,8 @@
+{"step_num": 1, "action_timestamp": "20250904@080607", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250904@080607.png"}
+{"step_num": 2, "action_timestamp": "20250904@080609", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250904@080609.png"}
+{"step_num": 3, "action_timestamp": "20250904@080612", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250904@080612.png"}
+{"step_num": 4, "action_timestamp": "20250904@080615", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250904@080615.png"}
+{"step_num": 5, "action_timestamp": "20250904@080617", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250904@080617.png"}
+{"step_num": 6, "action_timestamp": "20250904@080620", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250904@080620.png"}
+{"step_num": 7, "action_timestamp": "20250904@080623", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250904@080623.png"}
+{"step_num": 8, "action_timestamp": "20250904@080626", "action": "WAIT", "response": "click(failed):mathsisfun.com/games/2048.html", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250904@080626.png"}

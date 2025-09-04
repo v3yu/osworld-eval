@@ -1,0 +1,9 @@
+{"step_num": 1, "action_timestamp": "20250902@120401", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@120401.png"}
+{"step_num": 2, "action_timestamp": "20250902@120404", "action": "pyautogui.click(1, 1908)", "response": "click:three dots menu icon@(1,1908)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@120404.png"}
+{"step_num": 3, "action_timestamp": "20250902@120407", "action": "pyautogui.click(36, 65)", "response": "click:browser icon@(36,65)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@120407.png"}
+{"step_num": 4, "action_timestamp": "20250902@120409", "action": "pyautogui.click(1, 1910)", "response": "click:three dots menu icon@(1,1910)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@120409.png"}
+{"step_num": 5, "action_timestamp": "20250902@120412", "action": "pyautogui.click(36, 65)", "response": "click:browser icon@(36,65)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@120412.png"}
+{"step_num": 6, "action_timestamp": "20250902@120414", "action": "pyautogui.click(1, 1910)", "response": "click:three dots menu icon@(1,1910)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@120414.png"}
+{"step_num": 7, "action_timestamp": "20250902@120416", "action": "pyautogui.typewrite(\"disable new chrome ui\"); time.sleep(0.2); pyautogui.press(\"enter\")", "response": "type:disable new chrome ui", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@120416.png"}
+{"step_num": 7, "action_timestamp": "20250902@120419", "action": "WAIT", "response": "type:disable new chrome ui", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@120419.png"}
+{"Error": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381 - 'arguments'"}

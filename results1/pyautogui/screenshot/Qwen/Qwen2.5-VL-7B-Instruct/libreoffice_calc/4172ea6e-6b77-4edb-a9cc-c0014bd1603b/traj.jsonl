@@ -1,0 +1,9 @@
+{"step_num": 1, "action_timestamp": "20250902@133647", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@133647.png"}
+{"step_num": 2, "action_timestamp": "20250902@133650", "action": "pyautogui.click(1, 378)", "response": "click:cell B2@(1,378)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@133650.png"}
+{"step_num": 3, "action_timestamp": "20250902@133653", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@133653.png"}
+{"step_num": 4, "action_timestamp": "20250902@133658", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@133658.png"}
+{"step_num": 5, "action_timestamp": "20250902@133703", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@133703.png"}
+{"step_num": 6, "action_timestamp": "20250902@133707", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@133707.png"}
+{"step_num": 7, "action_timestamp": "20250902@133712", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@133712.png"}
+{"step_num": 8, "action_timestamp": "20250902@133715", "action": "pyautogui.click(1, 365)", "response": "click:cell B14@(1,365)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@133715.png"}
+{"step_num": 9, "action_timestamp": "20250902@133717", "action": "DONE", "response": "The task is completed.", "reward": 0, "done": true, "info": {"done": true}, "screenshot_file": "step_9_20250902@133717.png"}

@@ -1,0 +1,50 @@
+{"step_num": 1, "action_timestamp": "20250902@133755", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250902@133755.png"}
+{"step_num": 2, "action_timestamp": "20250902@133758", "action": "pyautogui.click(1, 645)", "response": "click:sort icon@(1,645)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_2_20250902@133758.png"}
+{"step_num": 3, "action_timestamp": "20250902@133802", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_3_20250902@133802.png"}
+{"step_num": 4, "action_timestamp": "20250902@133806", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_4_20250902@133806.png"}
+{"step_num": 5, "action_timestamp": "20250902@133810", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_5_20250902@133810.png"}
+{"step_num": 6, "action_timestamp": "20250902@133814", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_6_20250902@133814.png"}
+{"step_num": 7, "action_timestamp": "20250902@133818", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_7_20250902@133818.png"}
+{"step_num": 8, "action_timestamp": "20250902@133822", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_8_20250902@133822.png"}
+{"step_num": 9, "action_timestamp": "20250902@133826", "action": "pyautogui.click(1, 1446)", "response": "click:sort icon@(1,1446)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_9_20250902@133826.png"}
+{"step_num": 10, "action_timestamp": "20250902@133829", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_10_20250902@133829.png"}
+{"step_num": 11, "action_timestamp": "20250902@133833", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_11_20250902@133833.png"}
+{"step_num": 12, "action_timestamp": "20250902@133838", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_12_20250902@133838.png"}
+{"step_num": 13, "action_timestamp": "20250902@133842", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_13_20250902@133842.png"}
+{"step_num": 14, "action_timestamp": "20250902@133846", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_14_20250902@133846.png"}
+{"step_num": 15, "action_timestamp": "20250902@133849", "action": "pyautogui.click(1, 1017)", "response": "click:1@(1,1017)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_15_20250902@133849.png"}
+{"step_num": 16, "action_timestamp": "20250902@133853", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_16_20250902@133853.png"}
+{"step_num": 17, "action_timestamp": "20250902@133857", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_17_20250902@133857.png"}
+{"step_num": 18, "action_timestamp": "20250902@133901", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_18_20250902@133901.png"}
+{"step_num": 19, "action_timestamp": "20250902@133906", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_19_20250902@133906.png"}
+{"step_num": 20, "action_timestamp": "20250902@133909", "action": "pyautogui.click(1, 1476)", "response": "click:sort icon@(1,1476)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_20_20250902@133909.png"}
+{"step_num": 21, "action_timestamp": "20250902@133912", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_21_20250902@133912.png"}
+{"step_num": 22, "action_timestamp": "20250902@133916", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_22_20250902@133916.png"}
+{"step_num": 23, "action_timestamp": "20250902@133921", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_23_20250902@133921.png"}
+{"step_num": 24, "action_timestamp": "20250902@133925", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_24_20250902@133925.png"}
+{"step_num": 25, "action_timestamp": "20250902@133929", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_25_20250902@133929.png"}
+{"step_num": 26, "action_timestamp": "20250902@133932", "action": "pyautogui.click(1, 984)", "response": "click:1@(1,984)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_26_20250902@133932.png"}
+{"step_num": 27, "action_timestamp": "20250902@133934", "action": "pyautogui.click(1, 730)", "response": "click:Settings icon@(1,730)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_27_20250902@133934.png"}
+{"step_num": 28, "action_timestamp": "20250902@133937", "action": "pyautogui.click(1, 1439)", "response": "click:Sort button@(1,1439)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_28_20250902@133937.png"}
+{"step_num": 29, "action_timestamp": "20250902@133940", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_29_20250902@133940.png"}
+{"step_num": 30, "action_timestamp": "20250902@133943", "action": "pyautogui.click(1, 726)", "response": "click:Settings icon@(1,726)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_30_20250902@133943.png"}
+{"step_num": 31, "action_timestamp": "20250902@133947", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_31_20250902@133947.png"}
+{"step_num": 32, "action_timestamp": "20250902@133951", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_32_20250902@133951.png"}
+{"step_num": 33, "action_timestamp": "20250902@133955", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_33_20250902@133955.png"}
+{"step_num": 34, "action_timestamp": "20250902@133959", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_34_20250902@133959.png"}
+{"step_num": 35, "action_timestamp": "20250902@134003", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_35_20250902@134003.png"}
+{"step_num": 36, "action_timestamp": "20250902@134008", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_36_20250902@134008.png"}
+{"step_num": 37, "action_timestamp": "20250902@134012", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_37_20250902@134012.png"}
+{"step_num": 38, "action_timestamp": "20250902@134016", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_38_20250902@134016.png"}
+{"step_num": 39, "action_timestamp": "20250902@134020", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_39_20250902@134020.png"}
+{"step_num": 40, "action_timestamp": "20250902@134024", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_40_20250902@134024.png"}
+{"step_num": 41, "action_timestamp": "20250902@134027", "action": "pyautogui.click(1, 1471)", "response": "click:sort icon@(1,1471)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_41_20250902@134027.png"}
+{"step_num": 42, "action_timestamp": "20250902@134031", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_42_20250902@134031.png"}
+{"step_num": 43, "action_timestamp": "20250902@134035", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_43_20250902@134035.png"}
+{"step_num": 44, "action_timestamp": "20250902@134039", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_44_20250902@134039.png"}
+{"step_num": 45, "action_timestamp": "20250902@134043", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_45_20250902@134043.png"}
+{"step_num": 46, "action_timestamp": "20250902@134046", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_46_20250902@134046.png"}
+{"step_num": 47, "action_timestamp": "20250902@134051", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_47_20250902@134051.png"}
+{"step_num": 48, "action_timestamp": "20250902@134054", "action": "pyautogui.click(1, 1017)", "response": "click:1@(1,1017)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_48_20250902@134054.png"}
+{"step_num": 49, "action_timestamp": "20250902@134057", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_49_20250902@134057.png"}
+{"step_num": 50, "action_timestamp": "20250902@134101", "action": "WAIT", "response": "none", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_50_20250902@134101.png"}
