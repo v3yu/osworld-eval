@@ -77,6 +77,18 @@ class GUIAgentAdapter:
 
     def predict(self, instruction: str, obs: Dict[str, Any]) -> Tuple[str, List[Any]]:
         trajectory: List[Any] = []
+        # Provide the latest screenshot to the agent as base64 so LLM can "see" the UI
+        try:
+            screenshot_bytes = obs.get("screenshot")
+            if isinstance(screenshot_bytes, (bytes, bytearray)):
+                trajectory.append({
+                    "observation": {
+                        "image": _image_bytes_to_b64(screenshot_bytes)
+                    }
+                })
+        except Exception:
+            # If screenshot is missing or malformed, proceed without trajectory image
+            pass
         meta_data: Dict[str, Any] = {
             "action_history": self._action_history[-5:],
             "response_history": self._response_history[-5:],
