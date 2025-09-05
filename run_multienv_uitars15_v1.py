@@ -45,6 +45,7 @@ def config() -> argparse.Namespace:
         default="screenshot",
         help="Observation type",
     )
+    parser.add_argument("--use_memory", action="store_true", help="Use experience memory")
     parser.add_argument("--sleep_after_execution", type=float, default=3.0)
     parser.add_argument("--max_steps", type=int, default=15)
     
