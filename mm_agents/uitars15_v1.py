@@ -670,6 +670,18 @@ class UITARSAgent:
             self.history_n = 5
         
         self.cur_callusr_count = 0
+        
+        self.use_memory = runtime_conf.get("use_memory", False)
+        self.similar_num = runtime_conf.get("similar_num", 3)
+        self.evaluation_type = runtime_conf.get("evaluation_type", None)
+        self.domain = runtime_conf.get("domain", None)
+        self.memory = None
+        if self.use_memory:
+            from memory.experience_memory import Memory
+            multimodal = True
+            faiss_index_path = runtime_conf.get("faiss_index_path", None)
+            self.memory = Memory(multimodal=multimodal, faiss_index_path=faiss_index_path, agent=self)
+            self.experience_memory = None
 
     def reset(self, runtime_logger=None):
         self.thoughts = []
@@ -756,6 +768,47 @@ class UITARSAgent:
             user_prompt = self.prompt_template.format(
                 instruction=instruction
             )
+
+        # Inject experience memory if enabled
+        experience_memory_text = ""
+        if self.use_memory and self.memory is not None:
+            # Use screenshot as current_image if available
+            current_image = obs.get("screenshot", None)
+            # Use evaluation_type and domain from runtime_conf if available
+            dataset = self.evaluation_type
+            domain = self.domain
+            if self.experience_memory is None:
+                self.experience_memory = self.memory.construct_experience_memory(
+                    current_question=instruction,
+                    agent=self,
+                    current_image=current_image,
+                    dataset=dataset,
+                    domain=domain,
+                    similar_num=self.similar_num
+                )
+            experience_memory_text = self.experience_memory if self.experience_memory else ""
+        else:
+            # Fallback: load examples from file
+            try:
+                with open("agent/prompts/examples.txt", "r") as f:
+                    experience_memory_text = f.read()
+            except Exception:
+                experience_memory_text = ""
+
+        # Build user prompt with experience memory injected
+        if self.infer_mode == "qwen2vl_user" or self.infer_mode == "qwen25vl_normal":
+            user_prompt = self.prompt_template.format(
+                instruction=instruction,
+                action_space=self.prompt_action_space,
+                language=self.language
+            )
+        elif self.infer_mode == "qwen2vl_no_thought":
+            user_prompt = self.prompt_template.format(
+                instruction=instruction
+            )
+
+        # Inject experience memory into the prompt
+        user_prompt = f"{experience_memory_text}\n\n{user_prompt}"
 
         if len(self.history_images) > self.history_n:
             self.history_images = self.history_images[-self.history_n:]
