@@ -929,12 +929,6 @@ class UITARSAgent:
                 print(response.choices[0].message.content)
                 print("*" * 20)
                 prediction = response.choices[0].message.content.strip()
-                # Log the round
-                if self.collector.enabled:
-                    self.collector.add_conversation_round(messages, {
-                        "prediction": prediction,
-                        "parsed_responses": parsed_responses
-                    })
 
             except Exception as e:
                 logger.exception(f"Error when fetching response from client: {e}")
@@ -959,7 +953,12 @@ class UITARSAgent:
                 try_times -= 1
                 temperature = 1
                 top_k = -1
-                
+                # Log the round
+            if self.collector.enabled:
+                self.collector.add_conversation_round(messages, {
+                "prediction": prediction,
+                "parsed_responses": parsed_responses
+            })        
         if prediction is None:
             return "client error", ["DONE"]
 
