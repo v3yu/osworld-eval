@@ -197,8 +197,8 @@ def run_env_tasks(task_queue: Queue, args: argparse.Namespace, shared_scores: li
             runtime_conf: dict = {
                 "infer_mode": "qwen25vl_normal",
                 "prompt_style": "qwen25vl_normal",
-                "input_swap": True,
-                "language": "Chinese",
+                "input_swap": False,
+                "language": "English",
                 "history_n": 5,
                 "max_pixels": 16384*28*28,
                 "min_pixels": 100*28*28,
