@@ -273,12 +273,13 @@ class TrainingDataCollector:
             self.conversation_history.append(round_data)
             print(f"Added round {round_data['round_number']} to conversation {self.current_conversation_id}")
     
-    def end_conversation(self, conversation_summary: Optional[Dict[str, Any]] = None) -> str:
+    def end_conversation(self, conversation_summary: Optional[Dict[str, Any]] = None, metadata: Optional[Dict[str, str]] = None) -> str:
         """
         End the current conversation and save it to a file using the best format
         
         Args:
             conversation_summary: Additional summary information about the conversation
+            metadata: Optional metadata for the conversation (e.g., dataset, domain, model, test_id)
             
         Returns:
             Path to the saved file
@@ -309,10 +310,27 @@ class TrainingDataCollector:
         # Select the best saver based on conversation size and content
         saver = self._select_saver(optimized_data)
         
-        # Generate filename with appropriate extension
+        # Get metadata from self or argument
+        dataset = None
+        domain = None
+        model = None
+        test_id = None
+        if metadata:
+            dataset = metadata.get("dataset")
+            domain = metadata.get("domain")
+            model = metadata.get("model")
+            test_id = metadata.get("test_id")
+
+        # Build hierarchical output directory
+        output_dir = self.output_dir
+        if dataset and domain and model and test_id:
+            output_dir = output_dir / dataset / domain / model / test_id
+            output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Generate filename
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-        filename = f"conversation_{self.current_conversation_id}{saver.get_extension()}"
-        filepath = self.output_dir / filename
+        filename = f"conversation_{domain}_{self.current_conversation_id}{saver.get_extension()}" if domain else f"conversation_{self.current_conversation_id}{saver.get_extension()}"
+        filepath = output_dir / filename
         
         # Update metadata
         optimized_data["metadata"]["filename"] = filename
@@ -769,4 +787,4 @@ def get_collector() -> TrainingDataCollector:
 def set_collector(collector: TrainingDataCollector):
     """Set the global training data collector instance"""
     global _global_collector
-    _global_collector = collector 
+    _global_collector = collector

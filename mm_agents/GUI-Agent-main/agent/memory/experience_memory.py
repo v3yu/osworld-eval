@@ -301,6 +301,8 @@ class Memory:
                           if os.path.isdir(os.path.join(self.training_data_path, f))]
         seen_files = set()
         total_conversations = 0
+
+        # --- Existing nested structure loading ---
         for dataset in dataset_folders:
             dataset_path = os.path.join(self.training_data_path, dataset)
             
@@ -409,7 +411,73 @@ class Memory:
                         except Exception as e:
                             print(f"Error loading {jsonl_file}: {e}")
                             continue
-        
+
+        # --- NEW: Scan flat training_data/ directory for .jsonl files ---
+        flat_jsonl_files = [
+            os.path.join(self.training_data_path, f)
+            for f in os.listdir(self.training_data_path)
+            if f.endswith('.jsonl') and os.path.isfile(os.path.join(self.training_data_path, f))
+        ]
+        for jsonl_file in flat_jsonl_files:
+            try:
+                with open(jsonl_file, 'r') as f:
+                    lines = f.readlines()
+                    if len(lines) < 2:
+                        continue
+                    first_line = lines[0].strip()
+                    if first_line:
+                        config = json.loads(first_line)
+                        task_description = config.get('task_description', '')
+                        # Use 'unknown' for missing metadata
+                        dataset = config.get('dataset', 'unknown')
+                        domain = config.get('domain', 'unknown')
+                        model = config.get('model', 'unknown')
+                        prefixed_query = f"{model}_{dataset}_{domain}: {task_description}"
+                        if prefixed_query in seen_files:
+                            continue
+                        print('task_description: ', task_description)
+                        # Extract image if multimodal
+                        base64_image = None
+                        if self.multimodal and len(lines) >= 2:
+                            try:
+                                second_line = lines[1].strip()
+                                if second_line:
+                                    second_data = json.loads(second_line)
+                                    base64_image = self._extract_base64_image(second_data)
+                            except Exception as e:
+                                print(f"Error extracting image from {jsonl_file}: {e}")
+                        # Check actions
+                        conversation_list = [json.loads(line) for line in lines][1:]
+                        responses_list = [conversation['response'] for conversation in conversation_list]
+                        actual_actions = []
+                        previous_action_name, previous_action_reasoning = None, None
+                        for response in responses_list:
+                            action_json, current_action_name, current_action_reasoning = self.parse_action_from_response(response)
+                            if action_json:
+                                if current_action_name == previous_action_name and current_action_reasoning == previous_action_reasoning:
+                                    continue
+                                else:
+                                    actual_actions.append(action_json)
+                                    previous_action_name, previous_action_reasoning = current_action_name, current_action_reasoning
+                            else:
+                                print(f"Error parsing action: {response}")
+                                continue
+                        if len(actual_actions) < 3:
+                            continue
+                        self.memories.append({
+                            'file_path': jsonl_file,
+                            'task_description': task_description,
+                            'prefixed_query': prefixed_query,
+                            'dataset': dataset,
+                            'domain': domain,
+                            'base64_image': base64_image
+                        })
+                        seen_files.add(prefixed_query)
+                        total_conversations += 1
+            except Exception as e:
+                print(f"Error loading {jsonl_file}: {e}")
+                continue
+
         print(f"Total conversations loaded: {len(self.memories)}")
     
     def _extract_base64_image(self, data):
