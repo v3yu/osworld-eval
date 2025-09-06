@@ -1,4 +1,5 @@
 import ast
+import sys
 import base64
 from openai import OpenAI
 import math
@@ -17,6 +18,13 @@ from PIL import Image
 from mm_agents.accessibility_tree_wrap.heuristic_retrieve import (
     filter_nodes,
 )
+# Make GUI-Agent package importable despite hyphenated folder name
+_THIS_DIR = os.path.dirname(__file__)
+_GUI_AGENT_ROOT = os.path.join(_THIS_DIR, "GUI-Agent-main")
+if _GUI_AGENT_ROOT not in sys.path:
+    sys.path.insert(0, _GUI_AGENT_ROOT)
+    
+from utils.training_data_collector import get_collector # type: ignore
 
 UITARS_ACTION_SPACE = """
 click(start_box='<|box_start|>(x1,y1)<|box_end|>')
@@ -625,6 +633,7 @@ class UITARSAgent:
         self.max_trajectory_length = max_trajectory_length
         self.a11y_tree_max_tokens = a11y_tree_max_tokens
         self.model_type = model_type
+        self.collector = get_collector()
         self.runtime_conf = runtime_conf
         self.temperature = self.runtime_conf["temperature"]
         self.top_k = self.runtime_conf["top_k"]
@@ -703,7 +712,8 @@ class UITARSAgent:
         assert len(self.observations) == len(self.actions) and len(self.actions) == len(
             self.thoughts
         ), "The number of observations and actions should be the same."
-
+        if self.collector.enabled and getattr(self, "current_conversation_id", None) is None:
+            self.collector.start_conversation(task_description=instruction)
         if len(self.observations) > self.max_trajectory_length:
             if self.max_trajectory_length == 0:
                 _observations = []
@@ -778,6 +788,7 @@ class UITARSAgent:
             dataset = self.evaluation_type
             domain = self.domain
             if self.experience_memory is None:
+                print(f'Constructing experience memory with similar_num={self.similar_num}')
                 self.experience_memory = self.memory.construct_experience_memory(
                     current_question=instruction,
                     agent=self,
@@ -794,6 +805,7 @@ class UITARSAgent:
                     experience_memory_text = f.read()
             except Exception:
                 experience_memory_text = ""
+        print(f"Experience memory:\n{experience_memory_text}")
 
         # Build user prompt with experience memory injected
         if self.infer_mode == "qwen2vl_user" or self.infer_mode == "qwen25vl_normal":
@@ -894,7 +906,6 @@ class UITARSAgent:
                 "content": [{"type": "image_url", "image_url": {"url": f"data:image/png;base64,{encoded_string}"}}]
             })
             image_num += 1
-
         try_times = 3
         origin_resized_height = images[-1].height
         origin_resized_width = images[-1].width
@@ -918,6 +929,9 @@ class UITARSAgent:
                 print(response.choices[0].message.content)
                 print("*" * 20)
                 prediction = response.choices[0].message.content.strip()
+                # Log the round
+                if self.collector.enabled:
+                    self.collector.add_conversation_round(messages, response)
 
             except Exception as e:
                 logger.exception(f"Error when fetching response from client: {e}")
@@ -972,7 +986,8 @@ class UITARSAgent:
 
                 if parsed_response["action_type"] == FINISH_WORD:
                     self.actions.append(actions)
-
+                    if self.collector.enabled:
+                        self.collector.end_conversation()
                     return prediction, ["DONE"]
                 
                 elif parsed_response["action_type"] == WAIT_WORD:
