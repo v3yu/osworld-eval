@@ -392,9 +392,12 @@ class Memory:
                                             else:
                                                 print(f"Error parsing action: {response}")
                                                 continue
+                                        # After parsing, if skipping:
                                         if len(actual_actions) < 3:
+                                            print(f"[Memory] Skipping {jsonl_file}: not enough actions.")
                                             continue
-                                        
+                                        # If adding:
+                                        print(f"[Memory] Loaded conversation from {jsonl_file}")
                                         self.memories.append({
                                             'file_path': jsonl_file,
                                             'task_description': task_description,
@@ -413,15 +416,21 @@ class Memory:
                             continue
 
         # --- NEW: Scan flat training_data/ directory for .jsonl files ---
+        print(f"[Memory] Scanning for conversation logs in: {self.training_data_path}")
+
         flat_jsonl_files = [
             os.path.join(self.training_data_path, f)
             for f in os.listdir(self.training_data_path)
             if f.endswith('.jsonl') and os.path.isfile(os.path.join(self.training_data_path, f))
         ]
+        print(f"[Memory] Found {len(flat_jsonl_files)} flat .jsonl files.")
+
         for jsonl_file in flat_jsonl_files:
+            print(f"[Memory] Processing file: {jsonl_file}")
             try:
                 with open(jsonl_file, 'r') as f:
                     lines = f.readlines()
+                    print(f"[Memory] File {jsonl_file} has {len(lines)} lines.")
                     if len(lines) < 2:
                         continue
                     first_line = lines[0].strip()
@@ -462,8 +471,12 @@ class Memory:
                             else:
                                 print(f"Error parsing action: {response}")
                                 continue
+                        # After parsing, if skipping:
                         if len(actual_actions) < 3:
+                            print(f"[Memory] Skipping {jsonl_file}: not enough actions.")
                             continue
+                        # If adding:
+                        print(f"[Memory] Loaded conversation from {jsonl_file}")
                         self.memories.append({
                             'file_path': jsonl_file,
                             'task_description': task_description,
