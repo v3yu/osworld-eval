@@ -611,6 +611,23 @@ def trim_accessibility_tree(linearized_accessibility_tree, max_tokens):
     #     linearized_accessibility_tree += "[...]\n"
     return linearized_accessibility_tree
 
+    # Filter out image_url entries from messages before logging
+def filter_images_from_messages(messages):
+    filtered = []
+    for msg in messages:
+        if "content" in msg:
+            filtered_content = [
+                c for c in msg["content"]
+                if not (isinstance(c, dict) and c.get("type") == "image_url")
+            ]
+            msg_copy = msg.copy()
+            msg_copy["content"] = filtered_content
+            filtered.append(msg_copy)
+        else:
+            filtered.append(msg)
+    return filtered
+
+
 
 class UITARSAgent:
     def __init__(
@@ -699,22 +716,6 @@ class UITARSAgent:
         self.history_images = []
         self.history_responses = []
     
-        # Filter out image_url entries from messages before logging
-    def filter_images_from_messages(messages):
-        filtered = []
-        for msg in messages:
-            if "content" in msg:
-                filtered_content = [
-                    c for c in msg["content"]
-                    if not (isinstance(c, dict) and c.get("type") == "image_url")
-                ]
-                msg_copy = msg.copy()
-                msg_copy["content"] = filtered_content
-                filtered.append(msg_copy)
-            else:
-                filtered.append(msg)
-        return filtered
-
     def predict(
         self, instruction: str, obs: Dict, last_action_after_obs: Dict = None
     ) -> List:
