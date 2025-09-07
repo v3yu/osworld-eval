@@ -271,7 +271,7 @@ class Memory:
     and creates a single pool of memories with embeddings for better generalization.
     """
     
-    def __init__(self, training_data_path="/data/wenyi/training_data", agent=None, faiss_index_path=None, multimodal=False):
+    def __init__(self, training_data_path="training_data/", agent=None, faiss_index_path=None, multimodal=False):
         self.training_data_path = training_data_path
         self.multimodal = multimodal
         self.selected_conversations = None
@@ -295,6 +295,7 @@ class Memory:
     def _load_all_conversations(self):
         """Load all conversations from the training data directory into a single pool."""
         print("Loading all conversations from training data...")
+        print(f"[Memory] Scanning for logs in: {self.training_data_path}")
         
         # Get all dataset folders
         dataset_folders = [f for f in os.listdir(self.training_data_path) 
