@@ -728,6 +728,7 @@ class UITARSAgent:
             self.thoughts
         ), "The number of observations and actions should be the same."
         if self.collector.enabled and getattr(self, "current_conversation_id", None) is None:
+            print(f"[UITARSAgent] Starting new conversation for task: {instruction}")
             self.collector.start_conversation(task_description=instruction)
         if len(self.observations) > self.max_trajectory_length:
             if self.max_trajectory_length == 0:
@@ -797,13 +798,12 @@ class UITARSAgent:
         # Inject experience memory if enabled
         experience_memory_text = ""
         if self.use_memory and self.memory is not None:
-            # Use screenshot as current_image if available
+            print(f"[UITARSAgent] Attempting to construct experience memory for: '{instruction}'")
             current_image = obs.get("screenshot", None)
-            # Use evaluation_type and domain from runtime_conf if available
             dataset = self.evaluation_type
             domain = self.domain
             if self.experience_memory is None:
-                print(f'Constructing experience memory with similar_num={self.similar_num}')
+                print(f"[UITARSAgent] Reading from conversation logs to construct experience memory (similar_num={self.similar_num})")
                 self.experience_memory = self.memory.construct_experience_memory(
                     current_question=instruction,
                     agent=self,
@@ -812,6 +812,7 @@ class UITARSAgent:
                     domain=domain,
                     similar_num=self.similar_num
                 )
+                print(f"[UITARSAgent] Experience memory loaded: {bool(self.experience_memory)}")
             experience_memory_text = self.experience_memory if self.experience_memory else ""
         else:
             # Fallback: load examples from file
@@ -820,7 +821,7 @@ class UITARSAgent:
                     experience_memory_text = f.read()
             except Exception:
                 experience_memory_text = ""
-        print(f"Experience memory:\n{experience_memory_text}")
+        print(f"[UITARSAgent] Experience memory for prompt:\n{experience_memory_text[:500]}...")  # Print first 500 chars
 
         # Build user prompt with experience memory injected
         if self.infer_mode == "qwen2vl_user" or self.infer_mode == "qwen25vl_normal":
