@@ -954,11 +954,11 @@ class UITARSAgent:
                 temperature = 1
                 top_k = -1
                 # Log the round
-            if self.collector.enabled:
-                self.collector.add_conversation_round(messages, {
-                "prediction": prediction,
-                "parsed_responses": parsed_responses
-            })        
+        if self.collector.enabled:
+            self.collector.add_conversation_round(messages, {
+            "prediction": prediction,
+            "parsed_responses": parsed_responses
+        })        
         if prediction is None:
             return "client error", ["DONE"]
 
