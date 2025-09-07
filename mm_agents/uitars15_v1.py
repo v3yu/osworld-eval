@@ -698,7 +698,22 @@ class UITARSAgent:
         self.observations = []
         self.history_images = []
         self.history_responses = []
-        
+    
+        # Filter out image_url entries from messages before logging
+    def filter_images_from_messages(messages):
+        filtered = []
+        for msg in messages:
+            if "content" in msg:
+                filtered_content = [
+                    c for c in msg["content"]
+                    if not (isinstance(c, dict) and c.get("type") == "image_url")
+                ]
+                msg_copy = msg.copy()
+                msg_copy["content"] = filtered_content
+                filtered.append(msg_copy)
+            else:
+                filtered.append(msg)
+        return filtered
 
     def predict(
         self, instruction: str, obs: Dict, last_action_after_obs: Dict = None
@@ -955,10 +970,11 @@ class UITARSAgent:
                 top_k = -1
                 # Log the round
         if self.collector.enabled:
-            self.collector.add_conversation_round(messages, {
-            "prediction": prediction,
-            "parsed_responses": parsed_responses
-        })        
+            filtered_messages = filter_images_from_messages(messages)
+            self.collector.add_conversation_round(filtered_messages, {
+                "prediction": prediction,
+                "parsed_responses": parsed_responses
+            })        
         if prediction is None:
             return "client error", ["DONE"]
 
