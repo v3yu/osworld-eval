@@ -291,6 +291,8 @@ class Memory:
             self.save_index(f"/home/wenyi/GUI-Agent/memory/memory_index/{'multimodal' if multimodal else 'text'}_{datetime.now().strftime('m-%d_%H-%M')}")
         else:
             self.load_index(faiss_index_path)
+        print("[Memory] __init__ called")
+        print("[Memory] training_data_path:", training_data_path)
     
     def _load_all_conversations(self):
         """Load all conversations from the training data directory into a single pool."""

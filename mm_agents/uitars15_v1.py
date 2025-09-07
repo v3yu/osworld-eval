@@ -702,9 +702,12 @@ class UITARSAgent:
         self.evaluation_type = runtime_conf.get("evaluation_type", None)
         self.domain = runtime_conf.get("domain", None)
         self.memory = None
+        print("[UITARSAgent] use_memory:", self.use_memory)
         if self.use_memory:
             from memory.experience_memory import Memory
             multimodal = True
+            print("[UITARSAgent] Instantiating Memory...")
+            self.memory = Memory(training_data_path="training_data/", agent=self)
             faiss_index_path = runtime_conf.get("faiss_index_path", None)
             self.memory = Memory(multimodal=multimodal, faiss_index_path=faiss_index_path, agent=self)
             self.experience_memory = None
