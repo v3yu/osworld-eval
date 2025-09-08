@@ -966,11 +966,27 @@ class UITARSAgent:
                     self.min_pixels
                 )
                 if self.collector.enabled:
-                    filtered_messages = filter_images_from_messages(messages)
-                    self.collector.add_conversation_round(filtered_messages, {
+                    # Build round-specific messages (system + user prompt + the most recent image(s))
+                    # messages[0] = system, messages[1] = user prompt, subsequent entries contain history images/assistant
+                    round_messages = []
+                    if len(messages) >= 2:
+                        round_messages = [messages[0], messages[1]]
+                    # append the last image message if present (search from the end)
+                    for msg in reversed(messages[2:]):
+                        if isinstance(msg, dict) and "content" in msg:
+                            content = msg["content"]
+                            # detect multimodal image message
+                            if isinstance(content, list):
+                                if any(isinstance(c, dict) and c.get("type") == "image_url" for c in content):
+                                    round_messages.append(msg)
+                                    break
+                    # Filter out image payloads from the saved messages
+                    filtered_round_messages = filter_images_from_messages(round_messages)
+                    self.collector.add_conversation_round(filtered_round_messages, {
                         "prediction": prediction,
                         "parsed_responses": parsed_responses
                     })
+                    print(f"[UITARSAgent] Logged round {len(self.collector.conversation_history)} with {len(filtered_round_messages)} message(s)")
                 break
             except Exception as e:
                 print(f"Error when parsing response from client: {e}")
@@ -978,8 +994,7 @@ class UITARSAgent:
                 prediction = None
                 try_times -= 1
                 temperature = 1
-                top_k = -1
-                # Log the round        
+                top_k = -1 
         if prediction is None:
             return "client error", ["DONE"]
 
