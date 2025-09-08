@@ -24,7 +24,7 @@ _GUI_AGENT_ROOT = os.path.join(_THIS_DIR, "GUI-Agent-main")
 if _GUI_AGENT_ROOT not in sys.path:
     sys.path.insert(0, _GUI_AGENT_ROOT)
     
-from utils.training_data_collector import get_collector # type: ignore
+from utils.training_data_collector import get_collector, set_collector # type: ignore
 
 UITARS_ACTION_SPACE = """
 click(start_box='<|box_start|>(x1,y1)<|box_end|>')
@@ -940,7 +940,8 @@ class UITARSAgent:
                 if self.collector.enabled:
                     self.collector.add_conversation_round(
                         messages=filter_images_from_messages(messages),
-                        answer=prediction
+                        answer=prediction,
+                        round_info=None
                     )
 
             except Exception as e:
