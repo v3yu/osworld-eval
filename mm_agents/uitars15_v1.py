@@ -965,6 +965,12 @@ class UITARSAgent:
                     self.max_pixels,
                     self.min_pixels
                 )
+                if self.collector.enabled:
+                    filtered_messages = filter_images_from_messages(messages)
+                    self.collector.add_conversation_round(filtered_messages, {
+                        "prediction": prediction,
+                        "parsed_responses": parsed_responses
+                    })
                 break
             except Exception as e:
                 print(f"Error when parsing response from client: {e}")
@@ -973,13 +979,7 @@ class UITARSAgent:
                 try_times -= 1
                 temperature = 1
                 top_k = -1
-                # Log the round
-        if self.collector.enabled:
-            filtered_messages = filter_images_from_messages(messages)
-            self.collector.add_conversation_round(filtered_messages, {
-                "prediction": prediction,
-                "parsed_responses": parsed_responses
-            })        
+                # Log the round        
         if prediction is None:
             return "client error", ["DONE"]
 
