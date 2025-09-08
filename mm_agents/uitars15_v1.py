@@ -318,35 +318,6 @@ def parse_action_to_structure_output(text, factor, origin_resized_height, origin
         })
     return actions
 
-def parse_response_to_memory_log(responses,) -> List[Dict]:
-    if isinstance(responses, dict):
-        responses = [responses]
-    parsed_responses = []
-    for response in responses:
-        if "observation" in response:
-            observation = response["observation"]
-        else:
-            observation = ""
-
-        if "thought" in response:
-            thought = response["thought"]
-        else:
-            thought = ""
-        
-        action_dict = response
-        action_type = action_dict.get("action_type")
-        action_inputs = action_dict.get("action_inputs", {})
-        
-        parsed_response = {
-            "observation": observation,
-            "thought": thought,
-            "action_type": action_type,
-            "action_inputs": action_inputs,
-            "text": str(response)
-        }
-        parsed_responses.append(parsed_response)
-    return parsed_responses
-
 def parsing_response_to_pyautogui_code(responses, image_height: int, image_width:int, input_swap:bool=True) -> str:
     '''
     将M模型的输出解析为OSWorld中的action，生成pyautogui代码字符串
@@ -992,6 +963,24 @@ class UITARSAgent:
         if prediction is None:
             return "client error", ["DONE"]
 
+        # Log this model turn as a separate conversation round (filter out images to avoid huge base64 blobs)
+        try:
+            if self.collector.enabled:
+                try:
+                    filtered_messages = filter_images_from_messages(messages)
+                    # store a compact response object (prediction string + parsed responses)
+                    response_payload = {
+                        "prediction": prediction,
+                        "parsed_responses": parsed_responses
+                    }
+                    self.collector.add_conversation_round(filtered_messages, response_payload)
+                    print(f"[UITARSAgent] Logged round to collector for conversation: {self.collector.current_conversation_id}")
+                except Exception as e:
+                    print(f"[UITARSAgent] Error when logging round to collector: {e}")
+        except Exception:
+            # collector not available or disabled, ignore
+            pass
+
         self.history_responses.append(prediction)
         self.thoughts.append(prediction)
 
@@ -1045,14 +1034,6 @@ class UITARSAgent:
                 obs_image_width,
                 self.input_swap
             )
-            
-            parsed_response = parse_response_to_memory_log(parsed_response)
-            if self.collector.enabled:
-                self.collector.add_conversation_round(
-                    messages=filter_images_from_messages(messages),
-                    response=parsed_response,
-                    round_info=None
-                )
 
             actions.append(pyautogui_code)
 
