@@ -5,11 +5,13 @@ from browser_env.actions import ActionTypes
 from browser_env.constants import SPECIAL_KEY_MAPPINGS
 
 
-def create_click_action(description: str, reasoning: str = "") -> Action:
+def create_click_action(element_id: str, coords: str, description: str, reasoning: str = "") -> Action:
     """
     Create a click action based on description
     
     Args:
+        element_id: Element id of the element to click
+        coords: Coordinates of the element to click, in the format of "<point>x1 y1</point>", and it should be valid with two numbers, without any other text!
         description: Description of the element to click (e.g., "search button", "login link")
         reasoning: Reasoning for why this element should be clicked
         
@@ -18,17 +20,21 @@ def create_click_action(description: str, reasoning: str = "") -> Action:
     """
     return {
         'action_type': ActionTypes.CLICK,
+        'element_id': element_id,
+        'coords': coords,
         'description': description,
         'reasoning': reasoning
     }
 
 
-def create_type_action(text: str, field_description: str, reasoning: str = "") -> Action:
+def create_type_action(text: str, element_id: str, coords: str, field_description: str, reasoning: str = "") -> Action:
     """
     Create a type action based on field description
     
     Args:
         text: Text to type into the input field
+        element_id: Element id of the input field
+        coords: Coordinates of the element to type into, in the format of "<point>x1 y1</point>", and it should be valid with two numbers, without any other text!
         field_description: Description of the input field (e.g., "search box", "username field")
         reasoning: Reasoning for why this text should be typed in this field
         
@@ -38,10 +44,23 @@ def create_type_action(text: str, field_description: str, reasoning: str = "") -
     return {
         'action_type': ActionTypes.TYPE,
         'text': text,
+        'element_id': element_id,
+        'coords': coords,
         'field_description': field_description,
         'reasoning': reasoning
     }
 
+def create_select_action(element_id: str, description: str, text: str, reasoning: str = "") -> Action:
+    """
+    Create a select action based on description
+    """
+    return {
+        'action_type': ActionTypes.SELECT,
+        'element_id': element_id,
+        'description': description,
+        'text': text,
+        'reasoning': reasoning
+    }
 
 def create_scroll_action(direction: str, reasoning: str = "") -> Action:
     """
@@ -145,12 +164,14 @@ def create_action_from_function_call(func_name: str, func_args: Dict[str, Any]) 
     """
     if func_name == 'click':
         return create_click_action(
+            element_id=func_args.get('element_id', ''),
             description=func_args.get('description', ''),
             reasoning=func_args.get('reasoning', '')
         )
     elif func_name == 'type':
         return create_type_action(
             text=func_args.get('text', ''),
+            element_id=func_args.get('element_id', ''),
             field_description=func_args.get('field_description', ''),
             reasoning=func_args.get('reasoning', '')
         )
@@ -167,6 +188,13 @@ def create_action_from_function_call(func_name: str, func_args: Dict[str, Any]) 
     elif func_name == 'stop':
         return create_stop_action(
             answer=func_args.get('answer', 'Task completed'),
+            reasoning=func_args.get('reasoning', '')
+        )
+    elif func_name == 'select':
+        return create_select_action(
+            element_id=func_args.get('element_id', ''),
+            description=func_args.get('description', ''),
+            text=func_args.get('text', ''),
             reasoning=func_args.get('reasoning', '')
         )
     else:
@@ -211,6 +239,10 @@ def validate_action(action: Action) -> bool:
     
     elif action_type == ActionTypes.STOP:
         # Stop actions are always valid
+        return True
+    
+    elif action_type == ActionTypes.SELECT:
+        # Select actions are always valid
         return True
     
     else:
