@@ -7,6 +7,7 @@ import re
 import xml.etree.ElementTree as ET
 from io import BytesIO
 from typing import Dict, List
+from datetime import datetime
 import numpy as np
 import base64
 from loguru import logger
@@ -732,8 +733,13 @@ class UITARSAgent:
             self.thoughts
         ), "The number of observations and actions should be the same."
         if self.collector.enabled and getattr(self, "current_conversation_id", None) is None:
-            print(f"[UITARSAgent] Starting new conversation for task: {instruction}")
-            self.collector.start_conversation(task_description=instruction)
+            # Start a conversation only once per task/agent lifetime.  Use an internal flag
+            if not getattr(self, "_conversation_active", False):
+                print(f"[UITARSAgent] Starting new conversation for task: {instruction}")
+                # Keep a simple task marker to avoid restarting for same task
+                self.collector.start_conversation(task_description=instruction)
+                self._conversation_active = True
+                self._conversation_task = instruction
         if len(self.observations) > self.max_trajectory_length:
             if self.max_trajectory_length == 0:
                 _observations = []
@@ -1008,7 +1014,16 @@ class UITARSAgent:
                 if parsed_response["action_type"] == FINISH_WORD:
                     self.actions.append(actions)
                     if self.collector.enabled:
-                        self.collector.end_conversation()
+                        # Provide metadata so the collector can save in hierarchical folders
+                        metadata = {
+                            "dataset": self.evaluation_type or "unknown",
+                            "domain": self.domain or "unknown",
+                            "model": getattr(self, 'model', 'unknown'),
+                            "test_id": getattr(self, 'current_test_id', None) or datetime.now().strftime('%Y%m%d_%H%M%S')
+                        }
+                        print(f"[UITARSAgent] Ending conversation {self.collector.current_conversation_id} with metadata: {metadata}")
+                        self.collector.end_conversation(conversation_summary=None, metadata=metadata)
+                        self._conversation_active = False
                     return prediction, ["DONE"]
                 
                 elif parsed_response["action_type"] == WAIT_WORD:
