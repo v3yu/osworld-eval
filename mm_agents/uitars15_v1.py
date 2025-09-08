@@ -940,7 +940,7 @@ class UITARSAgent:
                 if self.collector.enabled:
                     self.collector.add_conversation_round(
                         messages=filter_images_from_messages(messages),
-                        answer=prediction,
+                        response=prediction,
                         round_info=None
                     )
 
