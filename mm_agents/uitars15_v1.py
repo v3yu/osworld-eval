@@ -318,6 +318,35 @@ def parse_action_to_structure_output(text, factor, origin_resized_height, origin
         })
     return actions
 
+def parse_response_to_memory_log(responses,) -> List[Dict]:
+    if isinstance(responses, dict):
+        responses = [responses]
+    parsed_responses = []
+    for response in responses:
+        if "observation" in response:
+            observation = response["observation"]
+        else:
+            observation = ""
+
+        if "thought" in response:
+            thought = response["thought"]
+        else:
+            thought = ""
+        
+        action_dict = response
+        action_type = action_dict.get("action_type")
+        action_inputs = action_dict.get("action_inputs", {})
+        
+        parsed_response = {
+            "observation": observation,
+            "thought": thought,
+            "action_type": action_type,
+            "action_inputs": action_inputs,
+            "text": str(response)
+        }
+        parsed_responses.append(parsed_response)
+    return parsed_responses
+
 def parsing_response_to_pyautogui_code(responses, image_height: int, image_width:int, input_swap:bool=True) -> str:
     '''
     将M模型的输出解析为OSWorld中的action，生成pyautogui代码字符串
@@ -937,13 +966,6 @@ class UITARSAgent:
                 print(response.choices[0].message.content)
                 print("*" * 20)
                 prediction = response.choices[0].message.content.strip()
-                if self.collector.enabled:
-                    self.collector.add_conversation_round(
-                        messages=filter_images_from_messages(messages),
-                        response=prediction,
-                        round_info=None
-                    )
-
             except Exception as e:
                 logger.exception(f"Error when fetching response from client: {e}")
                 prediction = None
@@ -1023,6 +1045,15 @@ class UITARSAgent:
                 obs_image_width,
                 self.input_swap
             )
+            
+            parsed_response = parse_response_to_memory_log(parsed_response)
+            if self.collector.enabled:
+                self.collector.add_conversation_round(
+                    messages=filter_images_from_messages(messages),
+                    response=parsed_response,
+                    round_info=None
+                )
+
             actions.append(pyautogui_code)
 
         self.actions.append(actions)
