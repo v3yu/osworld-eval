@@ -824,20 +824,8 @@ class UITARSAgent:
                 with open("agent/prompts/examples.txt", "r") as f:
                     experience_memory_text = f.read()
             except Exception:
-                experience_memory_text = ""
+                experience_memory_text = "Unable to load examples.txt"
         print(f"[UITARSAgent] Experience memory for prompt:\n{experience_memory_text[:500]}...")  # Print first 500 chars
-
-        # Build user prompt with experience memory injected
-        if self.infer_mode == "qwen2vl_user" or self.infer_mode == "qwen25vl_normal":
-            user_prompt = self.prompt_template.format(
-                instruction=instruction,
-                action_space=self.prompt_action_space,
-                language=self.language
-            )
-        elif self.infer_mode == "qwen2vl_no_thought":
-            user_prompt = self.prompt_template.format(
-                instruction=instruction
-            )
 
         # Inject experience memory into the prompt
         user_prompt = f"{experience_memory_text}\n\n{user_prompt}"
@@ -949,6 +937,11 @@ class UITARSAgent:
                 print(response.choices[0].message.content)
                 print("*" * 20)
                 prediction = response.choices[0].message.content.strip()
+                if self.collector.enabled:
+                    self.collector.add_conversation_round(
+                        messages=filter_images_from_messages(messages),
+                        answer=prediction
+                    )
 
             except Exception as e:
                 logger.exception(f"Error when fetching response from client: {e}")
@@ -965,28 +958,6 @@ class UITARSAgent:
                     self.max_pixels,
                     self.min_pixels
                 )
-                if self.collector.enabled:
-                    # Build round-specific messages (system + user prompt + the most recent image(s))
-                    # messages[0] = system, messages[1] = user prompt, subsequent entries contain history images/assistant
-                    round_messages = []
-                    if len(messages) >= 2:
-                        round_messages = [messages[0], messages[1]]
-                    # append the last image message if present (search from the end)
-                    for msg in reversed(messages[2:]):
-                        if isinstance(msg, dict) and "content" in msg:
-                            content = msg["content"]
-                            # detect multimodal image message
-                            if isinstance(content, list):
-                                if any(isinstance(c, dict) and c.get("type") == "image_url" for c in content):
-                                    round_messages.append(msg)
-                                    break
-                    # Filter out image payloads from the saved messages
-                    filtered_round_messages = filter_images_from_messages(round_messages)
-                    self.collector.add_conversation_round(filtered_round_messages, {
-                        "prediction": prediction,
-                        "parsed_responses": parsed_responses
-                    })
-                    print(f"[UITARSAgent] Logged round {len(self.collector.conversation_history)} with {len(filtered_round_messages)} message(s)")
                 break
             except Exception as e:
                 print(f"Error when parsing response from client: {e}")
