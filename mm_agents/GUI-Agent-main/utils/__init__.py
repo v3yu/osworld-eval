@@ -13,6 +13,7 @@ from .help_functions import (
 from .logging_setup import setup_logging
 from .action_check import action_self_check
 from .fallback_answer import generate_fallback_answer
+from .training_data_collector import get_collector
 
 __all__ = [
     'early_stop',
@@ -26,5 +27,6 @@ __all__ = [
     'create_test_file_list',
     'setup_logging',
     'action_self_check',
-    'generate_fallback_answer'
-] 
+    'generate_fallback_answer',
+    'get_collector'
+]

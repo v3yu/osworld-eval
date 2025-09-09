@@ -7,7 +7,6 @@ import re
 import xml.etree.ElementTree as ET
 from io import BytesIO
 from typing import Dict, List
-from datetime import datetime
 import numpy as np
 import base64
 from loguru import logger
@@ -24,8 +23,6 @@ _THIS_DIR = os.path.dirname(__file__)
 _GUI_AGENT_ROOT = os.path.join(_THIS_DIR, "GUI-Agent-main")
 if _GUI_AGENT_ROOT not in sys.path:
     sys.path.insert(0, _GUI_AGENT_ROOT)
-    
-from utils.training_data_collector import get_collector, set_collector # type: ignore
 
 UITARS_ACTION_SPACE = """
 click(start_box='<|box_start|>(x1,y1)<|box_end|>')
@@ -651,7 +648,6 @@ class UITARSAgent:
         self.max_trajectory_length = max_trajectory_length
         self.a11y_tree_max_tokens = a11y_tree_max_tokens
         self.model_type = model_type
-        self.collector = get_collector()
         self.runtime_conf = runtime_conf
         self.temperature = self.runtime_conf["temperature"]
         self.top_k = self.runtime_conf["top_k"]
@@ -726,20 +722,11 @@ class UITARSAgent:
         """
         Predict the next action(s) based on the current observation.
         """
-
         # Append trajectory
         # print(len(self.observations), len(self.actions), len(self.actions))
         assert len(self.observations) == len(self.actions) and len(self.actions) == len(
             self.thoughts
         ), "The number of observations and actions should be the same."
-        if self.collector.enabled and getattr(self, "current_conversation_id", None) is None:
-            # Start a conversation only once per task/agent lifetime.  Use an internal flag
-            if not getattr(self, "_conversation_active", False):
-                print(f"[UITARSAgent] Starting new conversation for task: {instruction}")
-                # Keep a simple task marker to avoid restarting for same task
-                self.collector.start_conversation(task_description=instruction)
-                self._conversation_active = True
-                self._conversation_task = instruction
         if len(self.observations) > self.max_trajectory_length:
             if self.max_trajectory_length == 0:
                 _observations = []
@@ -969,24 +956,6 @@ class UITARSAgent:
         if prediction is None:
             return "client error", ["DONE"]
 
-        # Log this model turn as a separate conversation round (filter out images to avoid huge base64 blobs)
-        try:
-            if self.collector.enabled:
-                try:
-                    filtered_messages = filter_images_from_messages(messages)
-                    # store a compact response object (prediction string + parsed responses)
-                    response_payload = {
-                        "prediction": prediction,
-                        "parsed_responses": parsed_responses
-                    }
-                    self.collector.add_conversation_round(filtered_messages, response_payload)
-                    print(f"[UITARSAgent] Logged round to collector for conversation: {self.collector.current_conversation_id}")
-                except Exception as e:
-                    print(f"[UITARSAgent] Error when logging round to collector: {e}")
-        except Exception:
-            # collector not available or disabled, ignore
-            pass
-
         self.history_responses.append(prediction)
         self.thoughts.append(prediction)
 
@@ -1013,17 +982,6 @@ class UITARSAgent:
 
                 if parsed_response["action_type"] == FINISH_WORD:
                     self.actions.append(actions)
-                    if self.collector.enabled:
-                        # Provide metadata so the collector can save in hierarchical folders
-                        metadata = {
-                            "dataset": self.evaluation_type or "unknown",
-                            "domain": self.domain or "unknown",
-                            "model": getattr(self, 'model', 'unknown'),
-                            "test_id": getattr(self, 'current_test_id', None) or datetime.now().strftime('%Y%m%d_%H%M%S')
-                        }
-                        print(f"[UITARSAgent] Ending conversation {self.collector.current_conversation_id} with metadata: {metadata}")
-                        self.collector.end_conversation(conversation_summary=None, metadata=metadata)
-                        self._conversation_active = False
                     return prediction, ["DONE"]
                 
                 elif parsed_response["action_type"] == WAIT_WORD:

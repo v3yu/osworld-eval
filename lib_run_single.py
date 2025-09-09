@@ -3,24 +3,70 @@ import json
 import logging
 import os
 import time
+import sys
+
+# Make GUI-Agent package importable despite hyphenated folder name
+_THIS_DIR = os.path.dirname(__file__)
+_GUI_AGENT_ROOT = os.path.join(_THIS_DIR, "GUI-Agent-main")
+if _GUI_AGENT_ROOT not in sys.path:
+    sys.path.insert(0, _GUI_AGENT_ROOT)
 
 logger = logging.getLogger("desktopenv.experiment")
 
-
 def run_single_example(agent, env, example, max_steps, instruction, args, example_result_dir, scores):
     runtime_logger = setup_logger(example, example_result_dir)
+
+    # Fix imports for Memory and get_collector
+    import sys
+    import os
+    _THIS_DIR = os.path.dirname(__file__)
+    _GUI_AGENT_ROOT = os.path.join(_THIS_DIR, "mm_agents", "GUI-Agent-main")
+    if _GUI_AGENT_ROOT not in sys.path:
+        sys.path.insert(0, _GUI_AGENT_ROOT)
+    _UTILS_ROOT = os.path.join(_THIS_DIR, "mm_agents", "GUI-Agent-main", "utils")
+    if _UTILS_ROOT not in sys.path:
+        sys.path.insert(0, _UTILS_ROOT)
+
+    memory = None
+    experience_memory_str = ""
+    if hasattr(args, 'use_memory') and args.use_memory:
+        try:
+            from agent.memory.experience_memory import Memory # type: ignore
+            memory = Memory(training_data_path=getattr(args, 'training_data_path', "training_data/"), agent=agent, multimodal=getattr(args, 'multimodal', False))
+            experience_memory_str = memory.construct_experience_memory(
+                current_question=instruction,
+                agent=agent,
+                dataset=getattr(args, 'dataset', None),
+                domain=getattr(args, 'domain', None),
+                similar_num=3
+            )
+        except Exception as e:
+            logger.warning(f"Failed to initialize memory module: {e}")
+            experience_memory_str = ""
+
+    if experience_memory_str and hasattr(agent, 'experience_memory'):
+        agent.experience_memory = experience_memory_str
+
     try:
         agent.reset(runtime_logger)
     except Exception as e:
         agent.reset()
 
     env.reset(task_config=example)
-    
     time.sleep(60) # Wait for the environment to be ready
     obs = env._get_obs() # Get the initial observation
     done = False
     step_idx = 0
     env.controller.start_recording()
+
+
+    # Optionally get training data collector
+    try:
+        from utils.training_data_collector import get_collector # type: ignore
+        collector = get_collector()
+    except Exception:
+        collector = None
+
     while not done and step_idx < max_steps:
         response, actions = agent.predict(
             instruction,
@@ -50,6 +96,25 @@ def run_single_example(agent, env, example, max_steps, instruction, args, exampl
                     "screenshot_file": f"step_{step_idx + 1}_{action_timestamp}.png"
                 }))
                 f.write("\n")
+
+            # Optionally add conversation round to training data collector
+            if collector is not None and hasattr(collector, 'add_conversation_round'):
+                # Prepare messages and round_info as needed
+                messages = [
+                    {"role": "user", "content": instruction},
+                    {"role": "observation", "content": obs}
+                ]
+                round_info = {
+                    "step_num": step_idx + 1,
+                    "action_timestamp": action_timestamp,
+                    "action": action,
+                    "reward": reward,
+                    "done": done,
+                    "info": info,
+                    "screenshot_file": f"step_{step_idx + 1}_{action_timestamp}.png"
+                }
+                collector.add_conversation_round(messages, response, round_info)
+
             # If the action was a navigation/type/enter, give extra time once per iteration
             try:
                 is_str = isinstance(action, str)
